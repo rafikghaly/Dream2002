@@ -1,0 +1,63 @@
+ 
+
+
+<%- include('layout.ejs'); %>
+
+
+<div class="container">
+<div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <h2>NODE.JS MVC</h2>
+                        <div class="card">
+                            <div class="card-header">client info</div>
+                            <div class="card-body">
+
+                                <form class="form-horizontal" method="post" action="/clientinfo" >
+
+                                    <div class="form-group">
+                                        <label for="name" class="cols-sm-2 control-label">Your Name</label>
+                                        <div class="cols-sm-10">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                                                <input type="text" id="name" name="name" placeholder=<%=name %>  >
+                                                
+                                                
+                                                <!-- <label class="form-control" name="name" id="name" >name</label> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email" class="cols-sm-2 control-label">Your Email</label>
+                                        <div class="cols-sm-10">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                                                <input type="text" id="email" name="email" placeholder=<%= email %>  >
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="email" class="cols-sm-2 control-label">Your location</label>
+                                        <div class="cols-sm-10">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                                                <input type="text" id="location" name="location" placeholder=<%= location %>>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                 <button  type="submit" class="btn btn-primary btn-lg btn-block login-button">UPDATE</button>
+
+                               
+                                  
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+<%- include('layout.ejs'); %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <h2>NODE.JS MVC</h2>
+      <div class="card">
+        <div class="card-header">Add New Product</div>
+        <div class="card-body">
+          <form class="form-horizontal" method="post" action="/addProduct">
+            <div class="form-group">
+              <label for="image" class="cols-sm-2 control-label">Product Image</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-image fa" aria-hidden="true"></i></span>
+                  <input type="file" class="form-control" name="image" id="image" />
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="name" class="cols-sm-2 control-label">Product Name</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" name="name" id="name" placeholder="Enter Product Name" />
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="price" class="cols-sm-2 control-label">Product Price</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-dollar fa" aria-hidden="true"></i></span>
+                  <input type="number" class="form-control" name="price" id="price" placeholder="Enter Product Price" />
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="category" class="cols-sm-2 control-label">Product Category</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-list-alt fa" aria-hidden="true"></i></span>
+                  <select class="form-control" name="category" id="category">
+                    <option value="mobiles">Mobiles</option>
+                    <option value="televisions">Televisions</option>
+                    <option value="accessories">Accessories</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="description" class="cols-sm-2 control-label">Product Description</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-align-left fa" aria-hidden="true"></i></span>
+                  <textarea class="form-control" name="description" id="description" placeholder="Enter Product Description"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="brand" class="cols-sm-2 control-label">Product Brand</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-tag fa" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" name="brand" id="brand" placeholder="Enter Product Brand" />
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="year" class="cols-sm-2 control-label">Product Year</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-calendar fa" aria-hidden="true"></i></span>
+                  <input type="number" class="form-control" name="year" id="year" placeholder="Enter Product Year" />
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="color" class="cols-sm-2 control-label">Product Color</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-paint-brush fa" aria-hidden="true"></i></span>
+                  <select class="form-control" name="color" id="color">
+                    <option value="red">Red</option>
+                    <option value="blue">Blue</option>
+                    <option value="green">Green</option>
+                    <option value="yellow">Yellow</option>
+                    <option value="black">Black</option>
+                    <!-- Add more color options as needed -->
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary btn-lg btn-block login-button">Add Product</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

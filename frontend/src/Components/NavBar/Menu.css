@@ -1,0 +1,58 @@
+nav{
+    width: 100%;
+    position: fixed;
+    display: flex;
+    background: #02052f;
+    align-items: center;
+}
+
+h1{
+    color: white;
+}
+
+.Logo{
+    height: 40px;
+    width: 40px;
+}
+
+.logo-container{
+    margin-left: 0;
+    display: flex;
+    align-items: center;
+}
+
+.Brand{
+    text-decoration: none;
+    font-weight: bolder;
+    color: white;
+    margin: 0;
+}
+
+.links{
+    right: 0;
+    float: right;
+}
+
+nav ul{
+    margin-right: 0;
+    display: flex;
+}
+
+nav ul li{
+    list-style: none;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    margin: 10px;
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+    transition: 0.1s ease;
+}
+
+nav ul li a:hover{
+    background: #212467;
+}

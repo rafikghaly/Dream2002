@@ -1,0 +1,15 @@
+<%- include('layout.ejs'); %>
+<!DOCTYPE html>
+<html>
+    <head>  
+        <title>Text Area Example</title>
+    </head>
+    <body>   
+        <label id="category" for="category">Enter Category:</label><br>  
+        <form method="post" action="/addCategory">
+            <input type="text" id="category" rows="4" cols="50" name="category"/>
+            <button type="submit">click</button>
+        </form>
+        
+    </body>
+</html>

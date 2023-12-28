@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+<<<<<<< HEAD
+    <list default="true" id="52019889-c0dd-47c1-b7a9-8502d8acd132" name="Changes" comment="Routes">
+      <change afterPath="$PROJECT_DIR$/src/Views/page.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/Mobiles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Mobiles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/Startpage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Startpage.js" afterDir="false" />
+=======
+    <list default="true" id="52019889-c0dd-47c1-b7a9-8502d8acd132" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Components/Assets/mobiles/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Assets/mobiles/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Assets/mobiles/3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Assets/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Assets/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/NavBar/Menu.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/NavBar/Menu.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/NavBar/Menu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/NavBar/Menu.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Product/Product.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Product/Product.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Product/Product.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Product/Product.jsx" afterDir="false" />
+>>>>>>> product-cards
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsBowerSettings">
+    <bower-package value="" />
+    <bower.json value="" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2a5Somy1Oi0TkHW1XRGE2JaUwkW" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+<<<<<<< HEAD
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Node.js.App.js.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.Menu.jsx.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Router&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/brwana/Gam3a/Senoir 1/IP/FrontEnd&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.start.executor&quot;: &quot;Run&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+=======
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Node.js.App.js.executor": "Run",
+    "Node.js.Menu.jsx.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "product-cards",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.start.executor": "Run",
+    "settings.editor.selected.configurable": "Errors",
+    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
+>>>>>>> product-cards
+  }
+}</component>
+  <component name="ReactDesignerToolWindowState">
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.intellij.reactbuddy.reactComponents" value="false" />
+        <entry key="com.intellij.reactbuddy.reactInspector" value="false" />
+        <entry key="com.intellij.reactbuddy.storybook" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="52019889-c0dd-47c1-b7a9-8502d8acd132" name="Changes" comment="" />
+      <created>1703607124936</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1703607124936</updated>
+      <workItem from="1703607127492" duration="8000" />
+      <workItem from="1703607144748" duration="823000" />
+      <workItem from="1703607978460" duration="8000" />
+      <workItem from="1703607995519" duration="418000" />
+<<<<<<< HEAD
+      <workItem from="1703608428573" duration="5808000" />
+      <workItem from="1703676156986" duration="20000" />
+      <workItem from="1703676229576" duration="67000" />
+      <workItem from="1703676309057" duration="3904000" />
+      <workItem from="1703705227780" duration="122000" />
+      <workItem from="1703705383424" duration="15000" />
+      <workItem from="1703705403438" duration="5569000" />
+=======
+      <workItem from="1703608428573" duration="5939000" />
+      <workItem from="1703677961234" duration="2180000" />
+      <workItem from="1703684721047" duration="1944000" />
+>>>>>>> product-cards
+    </task>
+    <task id="LOCAL-00001" summary="Routes">
+      <option name="closed" value="true" />
+      <created>1703720033614</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1703720033615</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+<<<<<<< HEAD
+    <MESSAGE value="Routes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Routes" />
+=======
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+>>>>>>> product-cards
+  </component>
+</project>

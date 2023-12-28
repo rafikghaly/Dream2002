@@ -1,0 +1,6 @@
+.row{
+    display:flex;
+    align-self: center;
+    align-items: center;
+    margin: 100px 100px;
+}

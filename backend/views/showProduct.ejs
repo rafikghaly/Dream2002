@@ -1,0 +1,31 @@
+<%- include('layout.ejs'); %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <h2>NODE.JS MVC</h2>
+      <div class="card">
+        <div class="card-header">Product Details</div>
+        <div class="card-body">
+          <!-- image to be here -->
+          <h3><%= product.name %></h3>
+          <p>Price: <%= product.price %></p>
+          <p>Brand: <%= product.brand %></p>
+          <p>Description: <%= product.description %></p>
+          <p>Color: <%= product.color %></p>
+          <p>Year: <%= product.year %></p>
+          <p>Category: <%= product.category %></p>
+          <!-- Add more details as needed -->
+          
+          <!-- Button to add product to cart -->
+          <form action="/addToCart" method="post">
+            <input type="hidden" name="productId" value="<%= product.id %>">
+            <button type="submit" class="btn btn-primary">Add to Cart</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

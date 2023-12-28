@@ -1,0 +1,24 @@
+.button{
+    width: 100px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+
+    border: none;
+}
+
+.button:hover{
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.button img{
+    margin: 0px;
+    width: 100px;
+    height: 100px;
+}
+
+.button p{
+    margin: 0;
+}

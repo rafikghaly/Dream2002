@@ -1,0 +1,117 @@
+@font-face{
+    font-family: 'Poppins';
+    src: url('../Assets/fonts/Poppins-Regular.ttf') format('truetype');
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+.container{
+    background:rgba(152, 143, 158, 0.1);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    border-radius: 30px;
+    width: 600px;
+    padding: 30px;
+}
+
+.header-text{
+    font-size: 50px;
+    color: #360093;
+    margin: 60px 15px;
+    cursor: pointer;
+}
+
+.header{
+    display: flex;
+}
+
+.inputs{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.input{
+    display:flex;
+    background: rgb(234, 234, 238);
+    align-items: center;
+    margin: auto;
+    border-radius: 6px;
+    width: 480px;
+    height: 65px;
+}
+
+input{
+    width: 70%;
+    height: 60%;
+    background: transparent;
+    outline: none;
+    border: none;
+    border-radius: 16px;
+    font-size: 23px;
+    color: rgb(107, 106, 106);
+}
+
+input::selection{
+    background: rgb(137, 82, 225);
+    color: white;
+}
+
+img{
+    width: 25px;
+    height: 25px;
+    margin: 0px 30px;
+}
+
+
+/* *************** Submit Buttons **************** */
+.submit-container{
+    display: flex;
+    align-content: space-evenly;
+}
+
+.submit{
+    background-color: #9227d9;
+    color: white;
+    border-radius: 90px;
+    font-size: 23px;
+    font-weight: 600;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 65px;
+
+    margin: 0px 30px;
+    width: 300px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.submit:hover{
+    background-color: #4a0379; 
+    color: white;
+}
+
+.gray{
+    color: gray;
+}
+
+.Accessory{
+    width: 700px;
+    height: 700px;
+    align-items: center;
+    border-radius: 30px;
+    background-image: url("../Assets/accessory\ background.jpg");
+    background-size: cover;
+}
+
+.Form{
+    display:flex;
+    align-content: space-evenly;
+    gap: 100px;
+}
