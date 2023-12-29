@@ -1,58 +1,76 @@
-const express = require('express');
-const bcrypt = require('bcryptjs');
 const userModel = require('../models/User');
-const connection = require('../models/connection.js');
 
-// For Register Page
-const registerView = (req, res) => {
-    res.render("register");
+//to be tested
+const logout = async (req, res) => {
+  console("LOGGGOUTTT");
+  if (req.body.action == "logout") {
+    console("IFFF LOGGGOUTTT");
+    userModel.logoutt(userModel.getemail());
+  }
 }
-
-// For Login View 
-const loginView = (req, res) => {
-    res.render("login");
-}
-
-
-
-
-  const loginUser = async (req,res)=>{
-    
-    
-    if (req.body.action == "Sign Up")
-    {
-      // Check if passwords match
-      if (req.body.password !== req.body.confirmPassword) {
-        return res.send("Passwords do not match");
-      }
-
-      const query = "INSERT INTO mydb.user (name, email, password) VALUES (?, ?, ?)";
-      const values = [
-        req.body.name,
-        req.body.email,
-        req.body.password  // Consider hashing the password before storing
-      ]
-      connection.query(query, [...values], (err, data) => {
-        if(err) return res.send("Signup Failed");
-        return res.send("Signup Successful");
-      })
+ 
+const LoginSignup = async (req, res) => {
+ 
+    if (req.body.action == "Sign Up") {
+ 
+        const { name, email, password, confirmPassword } = req.body;
+ 
+        if (!name || !email || !password || !confirmPassword) {
+            console.log("Fill empty fields");
+            res.send("Fill empty fields")
+        }
+        else if (password !== confirmPassword) {
+            console.log("Password must match");
+            res.send("Password must match")
+        }
+        else {
+            // Validation
+          const user = await userModel.validate(email);
+            if (user) {
+                console.log(user);
+                console.log("email exists");
+                res.send("Email Exists")
+            }
+            else {
+                // Password Hashing
+                userModel.add(name, email, password);
+                userModel.update(email);
+                console.log('Ok');
+                res.send("Ok");
+ 
+            }
+ 
+        }
     }
-    else{
-      const query = "SELECT * FROM mydb.user WHERE email = ? AND password = ?";
-      const values = [
-        req.body.email,
-        req.body.password
-      ]
-      connection.query(query, [...values], (err, data) => {
-        if(err) return res.send("Login Failed");
-        return res.json(data);
-      })
+    else {
+        const { email, password } = req.body;
+        if (!email || !password) {
+            console.log("Fill empty fields");
+            res.send("Fill empty fields");
+        } else {
+            // Validation
+            const results = await userModel.validate(email);
+            if (results.length > 0 && email == results[0].email) {
+                const results1 = await userModel.checkPass(email);
+                console.log(results1);
+                if (results1.length > 0 && password == results1[0].password) {
+                    userModel.update(email);
+                    console.log("correct password");
+                    res.send("correct password");
+                }
+                else {
+                    console.log("Incorrect Email or Password");
+                    res.send("Incorrect Email or Password");
+                }
+            }
+        }
     }
 }
-  
+ 
 
+ 
 module.exports =  {
-    registerView,
-    loginView,
-    loginUser
+  logout,
+  LoginSignup
 };
+ 

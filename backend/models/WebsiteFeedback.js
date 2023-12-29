@@ -10,30 +10,19 @@ const pool = mysql.createPool({
 
 const createfeedbackTable = `CREATE TABLE IF NOT EXISTS WebsiteFeedback(
   id INT AUTO_INCREMENT,
-  user_id INT,
+  name VARCHAR(255),
+  email VARCHAR(255),
   feedback VARCHAR(255),
-  FOREIGN KEY (user_id) references mydb.User(id),
   PRIMARY KEY(id)
 )`;
 
-const addfeed = async (id ,feedback)=>{
-  const [rows] =await pool.query('INSERT INTO websitefeedback SET ?',{user_id:id , feedback:feedback});
-
-
-}
-const getid= async()=>{
-  const [rows] =await pool.query(' SELECT id FROM User WHERE is_online = TRUE');
-  return rows.length > 0 ? rows : null;
+const addfeed = async (name ,email ,feedback)=>{
+  const [rows] =await pool.query('INSERT INTO websitefeedback SET ?',{name:name ,email:email ,feedback:feedback});
 }
 
 pool.query(createfeedbackTable);
 console.log('Client table created successfully.');
 
 module.exports = {
- addfeed,getid
+ addfeed
 };
-
-// connection.query(createfeedbackTable, (err, results, fields) => {
-//     if (err) throw err;
-//     console.log('User table created successfully.');
-//   });

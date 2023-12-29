@@ -1,31 +1,22 @@
 const express = require('express');
-const connection = require("../models/connection.js");
 const feedbackModel = require('../models/WebsiteFeedback');
-const app = express();
-const ContactUsView = (req, res) => {
-    // connection.query('SELECT feedback FROM WebsiteFeedback', async (error, results) => {
-    //     console.log(results);
-     //   res.render("contactUs",{   
-           // feed: results[0].feedback,
-    //     });
-    //  });
 
+const ContactUsView = (req, res) => {
     res.send("ok2");
 };
+
 const ContactUsUpdate= async (req,res)=>{
-    console.log("fok el dee2a");
-    const { feedback } = req.body;
+    const { name ,email ,feedback } = req.body;
     console.log(feedback);
-    if(feedback.length>0){
-    const results = await feedbackModel.getid();
-    await feedbackModel.addfeed(results[0].id ,feedback);
-    res.redirect("/clientinfo");  
+    if (!name || !email || !feedback ) {
+        console.log("Fill empty fields");
+        res.send("Fill empty fields")
+    }
+    else{
+    await feedbackModel.addfeed(name ,email ,feedback);
+    res.send("Feedback Sent");
     }
 };
-    
-
-
-
 
 module.exports =  {
     ContactUsView,

@@ -15,18 +15,39 @@ const LoginSignup = () => {
   const [confirmPassword,setConfirmPassword] = useState("");
 
   function LoginHandle(event){
-    //console.log("HENAAAA")
     event.preventDefault();
     axios.post('http://localhost:4111/login',{email,password,action})
-    .then(res =>console.log(res))
+    .then(res => {
+        if (res.data === 'correct password'){
+            window.location.href = '/home';
+        }
+        else if (res.data === 'Fill empty fields'){
+            alert("Fill empty fields")
+        }
+        else if (res.data === 'Incorrect Email or Password'){
+            alert("Incorrect Email or Password")
+        }
+    })
     .catch(err =>console.log(err));
   }
   
   function SignUpHandle(event){
-    //console.log("HENAAAA")
     event.preventDefault();
     axios.post('http://localhost:4111/login',{name,email,password,confirmPassword,action})
-    .then(res =>console.log(res))
+    .then(res => {
+        if (res.data === 'Ok'){
+            window.location.href = '/home';
+        }
+        else if (res.data == 'Fill empty fields'){
+            alert("Fill empty fields")
+        }
+        else if (res.data == 'Email Exists'){
+            alert("Email Exists")
+        }
+        else if (res.data == 'Password must match'){
+            alert("Password must match")
+        }
+    })
     .catch(err =>console.log(err));
   }
 
