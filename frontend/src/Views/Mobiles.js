@@ -18,7 +18,7 @@ const Mobiles =() =>{
         <div>
             <NavBar/>
             <MobileBtn/>
-            <MobileBtn/>
+            {/*<MobileBtn/>*/}
             <Product data={phone1}/>
         </div>
     );

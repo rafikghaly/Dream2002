@@ -1,0 +1,344 @@
+Index: src/App.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>@font-face{\r\n  font-family: 'Poppins';\r\n  src: url('./Components/Assets/fonts/Poppins-Regular.ttf') format('truetype');\r\n}\r\n\r\n*{\r\n  font-family: 'Poppins', sans-serif;\r\n}\r\n\r\n.App {\r\n  text-align: center;\r\n}\r\n\r\n.App-logo {\r\n  height: 40vmin;\r\n  pointer-events: none;\r\n}\r\n\r\n@media (prefers-reduced-motion: no-preference) {\r\n  .App-logo {\r\n    animation: App-logo-spin infinite 20s linear;\r\n  }\r\n}\r\n\r\n.App-header {\r\n  background-color: #282c34;\r\n  min-height: 100vh;\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: center;\r\n  font-size: calc(10px + 2vmin);\r\n  color: white;\r\n}\r\n\r\n.App-link {\r\n  color: #61dafb;\r\n}\r\n\r\n@keyframes App-logo-spin {\r\n  from {\r\n    transform: rotate(0deg);\r\n  }\r\n  to {\r\n    transform: rotate(360deg);\r\n  }\r\n}\r\n\r\n.row{\r\n  display:flex;\r\n  justify-content: space-evenly;\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/App.css b/src/App.css
+--- a/src/App.css	
++++ b/src/App.css	
+@@ -30,7 +30,7 @@
+   align-items: center;
+   justify-content: center;
+   font-size: calc(10px + 2vmin);
+-  color: white;
++  color: rgb(255, 255, 255);
+ }
+ 
+ .App-link {
+@@ -49,4 +49,4 @@
+ .row{
+   display:flex;
+   justify-content: space-evenly;
+-}
+\ No newline at end of file
++}
+Index: src/Components/NavBar/Menu.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>nav{\r\n    width: 100%;\r\n    position: fixed;\r\n    display: flex;\r\n    background: #02052f;\r\n    align-items: center;\r\n}\r\n\r\nh1{\r\n    color: white;\r\n}\r\n\r\n.Logo{\r\n    height: 40px;\r\n    width: 40px;\r\n}\r\n\r\n.logo-container{\r\n    margin-left: 0;\r\n    display: flex;\r\n    align-items: center;\r\n}\r\n\r\n.Brand{\r\n    text-decoration: none;\r\n    font-weight: bolder;\r\n    color: white;\r\n    margin: 0;\r\n}\r\n\r\n.links{\r\n    right: 0;\r\n    float: right;\r\n}\r\n\r\nnav ul{\r\n    margin-right: 0;\r\n    display: flex;\r\n}\r\n\r\nnav ul li{\r\n    list-style: none;\r\n    padding: 3px;\r\n    border-radius: 5px;\r\n}\r\n\r\nnav ul li a{\r\n    text-decoration: none;\r\n    margin: 10px;\r\n    padding: 10px;\r\n    color: white;\r\n    border-radius: 5px;\r\n    transition: 0.1s ease;\r\n}\r\n\r\nnav ul li a:hover{\r\n    background: #212467;\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Components/NavBar/Menu.css b/src/Components/NavBar/Menu.css
+--- a/src/Components/NavBar/Menu.css	
++++ b/src/Components/NavBar/Menu.css	
+@@ -1,6 +1,6 @@
+ nav{
+     width: 100%;
+-    position: fixed;
++    /*position: r;*/
+     display: flex;
+     background: #02052f;
+     align-items: center;
+Index: src/Views/Laptops.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from \"react\";\r\nimport NavBar from \"../Components/NavBar/Menu\";\r\n\r\nconst Laptops =() =>{\r\n    return(\r\n        <div>\r\n            <NavBar/>\r\n\r\n            {/*<h1>This is laptop page</h1>*/}\r\n        </div>\r\n    );\r\n\r\n}\r\nexport default Laptops
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Views/Laptops.js b/src/Views/Laptops.js
+--- a/src/Views/Laptops.js	
++++ b/src/Views/Laptops.js	
+@@ -5,8 +5,6 @@
+     return(
+         <div>
+             <NavBar/>
+-
+-            {/*<h1>This is laptop page</h1>*/}
+         </div>
+     );
+ 
+Index: src/Views/Startpage.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from \"react\";\r\nimport LoginSignup from \"../Components/LoginSignup/LoginSignup\";\r\nimport Homepage from \"./Homepage\";\r\nimport './page.css'\r\nconst Startpage=() => {\r\n    return(\r\n        <div className=\"row\">\r\n            <LoginSignup />\r\n        </div>\r\n    )\r\n}\r\nexport default Startpage
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Views/Startpage.js b/src/Views/Startpage.js
+--- a/src/Views/Startpage.js	
++++ b/src/Views/Startpage.js	
+@@ -1,6 +1,6 @@
+ import React from "react";
+ import LoginSignup from "../Components/LoginSignup/LoginSignup";
+-import Homepage from "./Homepage";
++
+ import './page.css'
+ const Startpage=() => {
+     return(
+Index: src/Components/Product/Product.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\r\n*{\r\n    color: black;\r\n}\r\n\r\n.product-container{\r\n    border: 1px solid black;\r\n    border-radius: 5px;\r\n    display:flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    width: 200px;\r\n}\r\n\r\n.product-text{\r\n    margin: 0 5px;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    /*justify-content: space-evenly;*/\r\n}\r\n\r\n.product-image{\r\n    width: 100%;\r\n    align-self: center;\r\n    align-items: center;\r\n    position:relative;\r\n}\r\n\r\n.product-image img{\r\n    align-self: center;\r\n    margin: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n\r\n.description{\r\n    background-color: rgba(172, 133, 233, 0.8);\r\n    position: absolute;\r\n    top:0;\r\n    left: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n    text-align: center;\r\n    display:none;\r\n    overflow: hidden;\r\n}\r\n\r\n.product-image:hover > .description{\r\n    display:block;\r\n    animation: slideUp .2s ease;\r\n}\r\n\r\n.title{\r\n    margin: 3px;\r\n    font-size: 20px;\r\n    font-weight:bold;\r\n    text-align: center;\r\n}\r\n\r\n.brand{\r\n    margin: 3px;\r\n    color: black;\r\n    font-size: 18px;\r\n    font-weight: lighter;\r\n    text-align: center;\r\n}\r\n\r\n.price{\r\n    margin: 3px;\r\n    font-size: 23px;\r\n    font-weight: normal;\r\n    text-align: center;\r\n    color: #9227d9;\r\n}\r\n\r\n.icon{\r\n    width: 40px;\r\n    height: 40px;\r\n    border-radius: 30px;\r\n    background-color: rgb(189, 186, 186);\r\n    transition: 0.2s ease;\r\n    cursor:pointer;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    margin: 15px;\r\n}\r\n\r\n.icon img{\r\n    width: 50%;\r\n    height: 50%;\r\n}\r\n\r\n.icon:hover{\r\n    background-color: rgb(137, 82, 225);\r\n}\r\n\r\n.buttons{\r\n    display: flex;\r\n}\r\n\r\n\r\n@keyframes slideUp{\r\n    0%{\r\n        opacity:0;\r\n        transform: translateY(-100px);\r\n    }\r\n    100%{\r\n        opacity:1;\r\n        transform:none;\r\n    }\r\n}\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Components/Product/Product.css b/src/Components/Product/Product.css
+--- a/src/Components/Product/Product.css	
++++ b/src/Components/Product/Product.css	
+@@ -36,7 +36,7 @@
+ 
+ 
+ .description{
+-    background-color: rgba(172, 133, 233, 0.8);
++    background-color: rgba(71, 106, 190, 0.8);
+     position: absolute;
+     top:0;
+     left: 0;
+@@ -72,7 +72,7 @@
+     font-size: 23px;
+     font-weight: normal;
+     text-align: center;
+-    color: #9227d9;
++    color: rgb(29, 29, 86);
+ }
+ 
+ .icon{
+@@ -94,7 +94,7 @@
+ }
+ 
+ .icon:hover{
+-    background-color: rgb(137, 82, 225);
++    background-color: rgb(30, 34, 117);
+ }
+ 
+ .buttons{
+Index: src/App.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import './App.css'\r\n// import LoginSignup from './Components/LoginSignup/LoginSignup'\r\n// import MobileBtn from './Components/Button/MobileBtn'\r\n// import Product from './Components/Product/Product';\r\n// import Menu from './Components/NavBar/Menu'\r\nimport {BrowserRouter , Route,Routes} from \"react-router-dom\";\r\nimport Homepage from \"./Views/Homepage\"\r\nimport Startpage from \"./Views/Startpage\"\r\nimport Contact from \"./Views/Contact\"\r\nimport About from \"./Views/About\"\r\nimport Mobiles from \"./Views/Mobiles\"\r\nimport Laptops from \"./Views/Laptops\"\r\nimport NavBar from \"./Components/NavBar/Menu\";\r\nimport MobileBtn from \"./Components/Button/MobileBtn\";\r\nimport Product from \"./Components/Product/Product\";\r\nimport React from \"react\";\r\n\r\n\r\n\r\nfunction App() {\r\n\r\n    return (\r\n        <div>\r\n            <NavBar/>\r\n            <BrowserRouter>\r\n                <Routes>\r\n                    <Route path=\"/\" element={<Startpage/>}></Route>\r\n                    <Route path=\"/home\" element={<Homepage/>}></Route>\r\n                    <Route path=\"/contact\" element={<Contact/>}></Route>\r\n                    <Route path=\"/about\" element={<About/>}></Route>\r\n                    <Route path=\"/mobile\" element={<Mobiles/>}></Route>\r\n                    <Route path=\"/laptop\" element={<Laptops/>}></Route>\r\n                </Routes>\r\n            </BrowserRouter>\r\n\r\n        </div>\r\n    );\r\n}\r\n\r\nexport default App;\r\n\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/App.js b/src/App.js
+--- a/src/App.js	
++++ b/src/App.js	
+@@ -1,8 +1,4 @@
+ import './App.css'
+-// import LoginSignup from './Components/LoginSignup/LoginSignup'
+-// import MobileBtn from './Components/Button/MobileBtn'
+-// import Product from './Components/Product/Product';
+-// import Menu from './Components/NavBar/Menu'
+ import {BrowserRouter , Route,Routes} from "react-router-dom";
+ import Homepage from "./Views/Homepage"
+ import Startpage from "./Views/Startpage"
+@@ -10,9 +6,6 @@
+ import About from "./Views/About"
+ import Mobiles from "./Views/Mobiles"
+ import Laptops from "./Views/Laptops"
+-import NavBar from "./Components/NavBar/Menu";
+-import MobileBtn from "./Components/Button/MobileBtn";
+-import Product from "./Components/Product/Product";
+ import React from "react";
+ 
+ 
+@@ -21,7 +14,7 @@
+ 
+     return (
+         <div>
+-            <NavBar/>
++
+             <BrowserRouter>
+                 <Routes>
+                     <Route path="/" element={<Startpage/>}></Route>
+Index: src/Views/Homepage.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from \"react\";\r\n// import LoginSignup from \"../Components/LoginSignup/LoginSignup\";\r\n\r\nimport NavBar from \"../Components/NavBar/Menu\"\r\nimport Product from \"../Components/Product/Product\";\r\nimport MobileBtn from \"../Components/Button/MobileBtn\";\r\n\r\n\r\nconst Homepage=() =>{\r\n    var phone1={\r\n        id:1,\r\n        name:'Iphone 13 Pro Max',\r\n        brand:'Apple',\r\n        description: '256GB - 4GB RAM - 6.5\\' OLED Display',\r\n        color:'Gold',\r\n        year:2021,\r\n        category:'mobiles',\r\n        price: 30000\r\n    }\r\n\r\n    return(\r\n            <div>\r\n             <NavBar/>\r\n                {/*<div>*/}\r\n                {/*    <MobileBtn/>*/}\r\n                {/*    <div className=\"row\">*/}\r\n                {/*        <Product data={phone1}/>*/}\r\n\r\n                {/*    </div>*/}\r\n\r\n                {/*</div>*/}\r\n\r\n            </div>\r\n    );\r\n\r\n}\r\nexport default Homepage
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Views/Homepage.js b/src/Views/Homepage.js
+--- a/src/Views/Homepage.js	
++++ b/src/Views/Homepage.js	
+@@ -1,9 +1,9 @@
+ import React from "react";
+-// import LoginSignup from "../Components/LoginSignup/LoginSignup";
+-
+-import NavBar from "../Components/NavBar/Menu"
++import sale from"../Components/Assets/sale.gif"
++import NavBar from "../Components/NavBar/Menu";
+ import Product from "../Components/Product/Product";
+ import MobileBtn from "../Components/Button/MobileBtn";
++import './page.css'
+ 
+ 
+ const Homepage=() =>{
+@@ -21,14 +21,34 @@
+     return(
+             <div>
+              <NavBar/>
+-                {/*<div>*/}
+-                {/*    <MobileBtn/>*/}
+-                {/*    <div className="row">*/}
+-                {/*        <Product data={phone1}/>*/}
++                <div>
++                  <div className="mobilebuttons">
++                      <MobileBtn name="mobile"/>
++                      <MobileBtn name="mobile"/>
++                      <MobileBtn name="mobile"/>
++                      <MobileBtn name="mobile"/>
++                      <MobileBtn name="mobile"/>
++
++                  </div>
++                    <div>
++                        <img className="sale" src={sale} alt='Sale'/>
++                    </div>
++                    <div className="row">
++                        <Product data={phone1}/>
++                        <Product data={phone1}/>
++                        <Product data={phone1}/>
++                        <Product data={phone1}/>
+ 
+-                {/*    </div>*/}
++                    </div>
++                    <div className="row">
++                        <Product data={phone1}/>
++                        <Product data={phone1}/>
++                        <Product data={phone1}/>
++                        <Product data={phone1}/>
+ 
+-                {/*</div>*/}
++                    </div>
++
++                </div>
+ 
+             </div>
+     );
+Index: src/Views/page.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>.row{\r\n    display:flex;\r\n    align-self: center;\r\n    align-items: center;\r\n    margin: 100px 100px;\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Views/page.css b/src/Views/page.css
+--- a/src/Views/page.css	
++++ b/src/Views/page.css	
+@@ -3,4 +3,19 @@
+     align-self: center;
+     align-items: center;
+     margin: 100px 100px;
++}
++.sale{
++    width: 100%;
++    height: 480px;
++    margin: 0;
++
++}
++.mobilebuttons{
++    width: 100%;
++    display: flex;
++    justify-content: space-evenly;
++}
++.aboutus{
++    font-size:xxx-large;
++
+ }
+\ No newline at end of file
+Index: src/Views/About.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from \"react\";\r\nimport NavBar from \"../Components/NavBar/Menu\";\r\n\r\nconst About =() =>{\r\n    return(\r\n        <div>\r\n            <NavBar/>\r\n\r\n{/*<h1>This is about page</h1>*/}\r\n        </div>\r\n    );\r\n\r\n}\r\nexport default About
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Views/About.js b/src/Views/About.js
+--- a/src/Views/About.js	
++++ b/src/Views/About.js	
+@@ -1,12 +1,13 @@
+ import React from "react";
+ import NavBar from "../Components/NavBar/Menu";
+-
++import './page.css'
+ const About =() =>{
+     return(
+         <div>
++
+             <NavBar/>
++            <div className="aboutus"> <h3>About Us</h3> </div>
+ 
+-{/*<h1>This is about page</h1>*/}
+         </div>
+     );
+ 
+Index: src/Components/Button/MobileBtn.jsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from 'react'\r\nimport mobile from '../Assets/mobile.png'\r\nimport './CategoryBtn.css'\r\n\r\nconst MobileBtn = () => {\r\n  return (\r\n    <div className='button'>\r\n        <img src={mobile} alt=\"\" />\r\n        <p>Mobile</p>\r\n    </div>\r\n  )\r\n}\r\n\r\nexport default MobileBtn\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Components/Button/MobileBtn.jsx b/src/Components/Button/MobileBtn.jsx
+--- a/src/Components/Button/MobileBtn.jsx	
++++ b/src/Components/Button/MobileBtn.jsx	
+@@ -2,12 +2,15 @@
+ import mobile from '../Assets/mobile.png'
+ import './CategoryBtn.css'
+ 
+-const MobileBtn = () => {
++const MobileBtn = (props) => {
++    const btn=props.name
++    const photo = require(`../Assets/${btn}.png`);
+   return (
+     <div className='button'>
+-        <img src={mobile} alt="" />
+-        <p>Mobile</p>
++        <img src={photo} alt="" />
++        <p>{btn}</p>
+     </div>
++
+   )
+ }
+ 
+Index: src/Views/Mobiles.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from \"react\";\r\nimport NavBar from \"../Components/NavBar/Menu\";\r\nimport Product from \"../Components/Product/Product\";\r\nimport MobileBtn from \"../Components/Button/MobileBtn\";\r\n\r\nconst Mobiles =() =>{\r\n    var phone1={\r\n        id:2,\r\n        name:'Galaxy s21 Ultra',\r\n        brand:'Samsung',\r\n        description: 'shit',\r\n        color:'black',\r\n        year:2023,\r\n        category:'mobiles',\r\n        price: 3000\r\n    }\r\n    return(\r\n        <div>\r\n            <NavBar/>\r\n            <MobileBtn/>\r\n            <MobileBtn/>\r\n            <Product data={phone1}/>\r\n        </div>\r\n    );\r\n\r\n}\r\nexport default Mobiles
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Views/Mobiles.js b/src/Views/Mobiles.js
+--- a/src/Views/Mobiles.js	
++++ b/src/Views/Mobiles.js	
+@@ -18,7 +18,7 @@
+         <div>
+             <NavBar/>
+             <MobileBtn/>
+-            <MobileBtn/>
++            {/*<MobileBtn/>*/}
+             <Product data={phone1}/>
+         </div>
+     );
+Index: src/Views/Contact.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from \"react\";\r\nimport NavBar from \"../Components/NavBar/Menu\";\r\n\r\nconst Contact =() =>{\r\n    return(\r\n        <div>\r\n            <NavBar/>\r\n\r\n            {/*<h1>This is contact page</h1>*/}\r\n        </div>\r\n    );\r\n\r\n}\r\nexport default Contact
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Views/Contact.js b/src/Views/Contact.js
+--- a/src/Views/Contact.js	
++++ b/src/Views/Contact.js	
+@@ -6,7 +6,7 @@
+         <div>
+             <NavBar/>
+ 
+-            {/*<h1>This is contact page</h1>*/}
++
+         </div>
+     );
+ 

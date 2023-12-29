@@ -4,3 +4,34 @@
     align-items: center;
     margin: 100px 100px;
 }
+.sale{
+    width: 100%;
+    height: 480px;
+    margin: 0;
+
+}
+.mobilebuttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.aboutus{
+    font-size:xxx-large;
+
+}
+.pr{
+    width: 50%;
+    font-size: large;
+
+}
+.hed{
+    font-family: Georgia;
+}
+.photo{
+    float: right;
+    width: 48%;
+    height: 70%;
+    margin-top: -350px;
+    margin-right: 0;
+
+}

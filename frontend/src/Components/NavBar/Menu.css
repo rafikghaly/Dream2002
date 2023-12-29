@@ -1,6 +1,6 @@
 nav{
     width: 100%;
-    position: fixed;
+    /*position: r;*/
     display: flex;
     background: #02052f;
     align-items: center;

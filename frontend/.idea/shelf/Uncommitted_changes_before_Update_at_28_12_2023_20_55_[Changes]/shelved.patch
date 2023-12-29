@@ -1,0 +1,159 @@
+Index: src/App.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import './App.css'\r\n// import LoginSignup from './Components/LoginSignup/LoginSignup'\r\n// import MobileBtn from './Components/Button/MobileBtn'\r\n// import Product from './Components/Product/Product';\r\n// import Menu from './Components/NavBar/Menu'\r\nimport {BrowserRouter , Route,Routes} from \"react-router-dom\";\r\nimport Homepage from \"./Views/Homepage\"\r\nimport Startpage from \"./Views/Startpage\"\r\nimport Contact from \"./Views/Contact\"\r\nimport About from \"./Views/About\"\r\nimport Mobiles from \"./Views/Mobiles\"\r\nimport Laptops from \"./Views/Laptops\"\r\nimport NavBar from \"./Components/NavBar/Menu\";\r\nimport MobileBtn from \"./Components/Button/MobileBtn\";\r\nimport Product from \"./Components/Product/Product\";\r\nimport React from \"react\";\r\n\r\n\r\n\r\nfunction App() {\r\n    var phone1={\r\n        id:1,\r\n        name:'Iphone 13 Pro Max',\r\n        brand:'Apple',\r\n        description: '256GB - 4GB RAM - 6.5\\' OLED Display',\r\n        color:'Gold',\r\n        year:2021,\r\n        category:'mobiles',\r\n        price: 30000\r\n    }\r\n    return (\r\n        <div>\r\n            <BrowserRouter>\r\n                <Routes>\r\n                    <Route path=\"/\" element={<Startpage/>}></Route>\r\n                    <Route path=\"/home\" element={<Homepage/>}></Route>\r\n                    <Route path=\"/contact\" element={<Contact/>}></Route>\r\n                    <Route path=\"/about\" element={<About/>}></Route>\r\n                    <Route path=\"/mobile\" element={<Mobiles/>}></Route>\r\n                    <Route path=\"/laptop\" element={<Laptops/>}></Route>\r\n                </Routes>\r\n            </BrowserRouter>\r\n\r\n            <NavBar/>\r\n            <div>\r\n                <MobileBtn/>\r\n                <div className=\"row\">\r\n                    <Product data={phone1}/>\r\n\r\n                </div>\r\n\r\n            </div>\r\n\r\n        </div>\r\n\r\n    )\r\n        ;\r\n\r\n}\r\n\r\nexport default App;\r\n\r\n// return (\r\n//   // <div>\r\n  //   //\r\n  //   //     <Menu/>\r\n  //   //     {/*<LoginSignup/>*/}\r\n  //   //     {/*<div className='row'>*/}\r\n  //   //     {/*  <MobileBtn/>*/}\r\n  //   //     {/*  <MobileBtn/>*/}\r\n  //   //     {/*  <MobileBtn/>*/}\r\n  //   //     {/*  <MobileBtn/>*/}\r\n  //   //   {/*  <MobileBtn/>*/}\r\n  //   //   {/*</div>*/}\r\n  //   //\r\n  //   //   {/*<div className='row'>*/}\r\n  //   //   {/*  <Product/>*/}\r\n  //   //   {/*  <Product/>*/}\r\n  //   //   {/*  <Product/>*/}\r\n  //   //   {/*  <Product/>*/}\r\n  //   //   {/*  <Product/>*/}\r\n  //   //   {/*  <Product/>*/}\r\n  //   //   {/*</div>*/}\r\n  //   //\r\n  //   // </div>\r\n  // );\r\n\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/App.js b/src/App.js
+--- a/src/App.js	
++++ b/src/App.js	
+@@ -18,16 +18,7 @@
+ 
+ 
+ function App() {
+-    var phone1={
+-        id:1,
+-        name:'Iphone 13 Pro Max',
+-        brand:'Apple',
+-        description: '256GB - 4GB RAM - 6.5\' OLED Display',
+-        color:'Gold',
+-        year:2021,
+-        category:'mobiles',
+-        price: 30000
+-    }
++
+     return (
+         <div>
+             <BrowserRouter>
+@@ -41,15 +32,15 @@
+                 </Routes>
+             </BrowserRouter>
+ 
+-            <NavBar/>
+-            <div>
+-                <MobileBtn/>
+-                <div className="row">
+-                    <Product data={phone1}/>
++            {/*<NavBar/>*/}
++            {/*<div>*/}
++            {/*    <MobileBtn/>*/}
++            {/*    <div className="row">*/}
++            {/*        <Product data={phone1}/>*/}
+ 
+-                </div>
++            {/*    </div>*/}
+ 
+-            </div>
++            {/*</div>*/}
+ 
+         </div>
+ 
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"52019889-c0dd-47c1-b7a9-8502d8acd132\" name=\"Changes\" comment=\"Routes\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"JavaScript File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"master\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"JsBowerSettings\">\r\n    <bower-package value=\"\" />\r\n    <bower.json value=\"\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;customColor&quot;: &quot;&quot;,\r\n  &quot;associatedIndex&quot;: 3\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2a5Somy1Oi0TkHW1XRGE2JaUwkW\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"Node.js.App.js.executor\": \"Run\",\r\n    \"Node.js.Menu.jsx.executor\": \"Run\",\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"git-widget-placeholder\": \"Router\",\r\n    \"last_opened_file_path\": \"E:/brwana/Gam3a/Senoir 1/IP/FrontEnd\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"npm.start.executor\": \"Run\",\r\n    \"settings.editor.selected.configurable\": \"Errors\",\r\n    \"ts.external.directory.path\": \"/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"ReactDesignerToolWindowState\">\r\n    <option name=\"myId2Visible\">\r\n      <map>\r\n        <entry key=\"com.intellij.reactbuddy.reactComponents\" value=\"false\" />\r\n        <entry key=\"com.intellij.reactbuddy.reactInspector\" value=\"false\" />\r\n        <entry key=\"com.intellij.reactbuddy.storybook\" value=\"false\" />\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"start\" type=\"js.build_tools.npm\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <package-json value=\"$PROJECT_DIR$/package.json\" />\r\n      <command value=\"run\" />\r\n      <scripts>\r\n        <script value=\"start\" />\r\n      </scripts>\r\n      <node-interpreter value=\"project\" />\r\n      <envs />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"npm.start\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"52019889-c0dd-47c1-b7a9-8502d8acd132\" name=\"Changes\" comment=\"\" />\r\n      <created>1703607124936</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1703607124936</updated>\r\n      <workItem from=\"1703607127492\" duration=\"8000\" />\r\n      <workItem from=\"1703607144748\" duration=\"823000\" />\r\n      <workItem from=\"1703607978460\" duration=\"8000\" />\r\n      <workItem from=\"1703607995519\" duration=\"418000\" />\r\n      <workItem from=\"1703608428573\" duration=\"5808000\" />\r\n      <workItem from=\"1703676156986\" duration=\"20000\" />\r\n      <workItem from=\"1703676229576\" duration=\"67000\" />\r\n      <workItem from=\"1703676309057\" duration=\"3904000\" />\r\n      <workItem from=\"1703705227780\" duration=\"122000\" />\r\n      <workItem from=\"1703705383424\" duration=\"15000\" />\r\n      <workItem from=\"1703705403438\" duration=\"5569000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Routes\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1703720033614</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1703720033615</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"2\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Routes\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Routes\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -4,7 +4,12 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="52019889-c0dd-47c1-b7a9-8502d8acd132" name="Changes" comment="Routes" />
++    <list default="true" id="52019889-c0dd-47c1-b7a9-8502d8acd132" name="Changes" comment="Routes">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Components/LoginSignup/LoginSignup.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/LoginSignup/LoginSignup.css" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Views/Homepage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/Homepage.js" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -41,25 +46,25 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "Node.js.App.js.executor": "Run",
+-    "Node.js.Menu.jsx.executor": "Run",
+-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "git-widget-placeholder": "Router",
+-    "last_opened_file_path": "E:/brwana/Gam3a/Senoir 1/IP/FrontEnd",
+-    "node.js.detected.package.eslint": "true",
+-    "node.js.detected.package.tslint": "true",
+-    "node.js.selected.package.eslint": "(autodetect)",
+-    "node.js.selected.package.tslint": "(autodetect)",
+-    "nodejs_package_manager_path": "npm",
+-    "npm.start.executor": "Run",
+-    "settings.editor.selected.configurable": "Errors",
+-    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
+-    "vue.rearranger.settings.migration": "true"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;Node.js.App.js.executor&quot;: &quot;Run&quot;,
++    &quot;Node.js.Menu.jsx.executor&quot;: &quot;Run&quot;,
++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;Router&quot;,
++    &quot;last_opened_file_path&quot;: &quot;E:/brwana/Gam3a/Senoir 1/IP/FrontEnd&quot;,
++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
++    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
++    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
++    &quot;npm.start.executor&quot;: &quot;Run&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;,
++    &quot;ts.external.directory.path&quot;: &quot;/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
++    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="ReactDesignerToolWindowState">
+     <option name="myId2Visible">
+       <map>
+@@ -104,7 +109,8 @@
+       <workItem from="1703676309057" duration="3904000" />
+       <workItem from="1703705227780" duration="122000" />
+       <workItem from="1703705383424" duration="15000" />
+-      <workItem from="1703705403438" duration="5569000" />
++      <workItem from="1703705403438" duration="6703000" />
++      <workItem from="1703786899620" duration="2407000" />
+     </task>
+     <task id="LOCAL-00001" summary="Routes">
+       <option name="closed" value="true" />
+@@ -119,6 +125,29 @@
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+     <option name="version" value="3" />
++  </component>
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="MAIN">
++          <value>
++            <State>
++              <option name="FILTERS">
++                <map>
++                  <entry key="branch">
++                    <value>
++                      <list>
++                        <option value="Router" />
++                      </list>
++                    </value>
++                  </entry>
++                </map>
++              </option>
++            </State>
++          </value>
++        </entry>
++      </map>
++    </option>
+   </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="Routes" />

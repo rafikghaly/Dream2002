@@ -1,9 +1,9 @@
 import React from "react";
-// import LoginSignup from "../Components/LoginSignup/LoginSignup";
-
-import NavBar from "../Components/NavBar/Menu"
+import sale from"../Components/Assets/sale.gif"
+import NavBar from "../Components/NavBar/Menu";
 import Product from "../Components/Product/Product";
 import MobileBtn from "../Components/Button/MobileBtn";
+import './page.css'
 
 
 const Homepage=() =>{
@@ -21,14 +21,34 @@ const Homepage=() =>{
     return(
             <div>
              <NavBar/>
-                {/*<div>*/}
-                {/*    <MobileBtn/>*/}
-                {/*    <div className="row">*/}
-                {/*        <Product data={phone1}/>*/}
+                <div>
+                  <div className="mobilebuttons">
+                      <MobileBtn name="mobile"/>
+                      <MobileBtn name="mobile"/>
+                      <MobileBtn name="mobile"/>
+                      <MobileBtn name="mobile"/>
+                      <MobileBtn name="mobile"/>
 
-                {/*    </div>*/}
+                  </div>
+                    <div>
+                        <img className="sale" src={sale} alt='Sale'/>
+                    </div>
+                    <div className="row">
+                        <Product data={phone1}/>
+                        <Product data={phone1}/>
+                        <Product data={phone1}/>
+                        <Product data={phone1}/>
 
-                {/*</div>*/}
+                    </div>
+                    <div className="row">
+                        <Product data={phone1}/>
+                        <Product data={phone1}/>
+                        <Product data={phone1}/>
+                        <Product data={phone1}/>
+
+                    </div>
+
+                </div>
 
             </div>
     );

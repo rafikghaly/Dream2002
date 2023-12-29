@@ -36,7 +36,7 @@
 
 
 .description{
-    background-color: rgba(172, 133, 233, 0.8);
+    background-color: rgba(71, 106, 190, 0.8);
     position: absolute;
     top:0;
     left: 0;
@@ -72,7 +72,7 @@
     font-size: 23px;
     font-weight: normal;
     text-align: center;
-    color: #9227d9;
+    color: rgb(29, 29, 86);
 }
 
 .icon{
@@ -94,7 +94,7 @@
 }
 
 .icon:hover{
-    background-color: rgb(137, 82, 225);
+    background-color: rgb(30, 34, 117);
 }
 
 .buttons{

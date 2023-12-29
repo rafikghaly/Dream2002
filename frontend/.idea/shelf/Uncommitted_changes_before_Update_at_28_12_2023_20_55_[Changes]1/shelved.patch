@@ -1,0 +1,86 @@
+Index: src/Components/LoginSignup/LoginSignup.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>@font-face{\r\n    font-family: 'Poppins';\r\n    src: url('../Assets/fonts/Poppins-Regular.ttf') format('truetype');\r\n}\r\n\r\n*{\r\n    font-family: 'Poppins', sans-serif;\r\n}\r\n.container{\r\n    background:rgba(152, 143, 158, 0.1);\r\n    display: flex;\r\n    flex-direction: column;\r\n    flex-wrap: wrap;\r\n    align-items: center;\r\n    border-radius: 30px;\r\n    width: 600px;\r\n    padding: 30px;\r\n}\r\n\r\n.header-text{\r\n    font-size: 50px;\r\n    color: #360093;\r\n    margin: 60px 15px;\r\n    cursor: pointer;\r\n}\r\n\r\n.header{\r\n    display: flex;\r\n}\r\n\r\n.inputs{\r\n    display:flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    gap: 25px;\r\n}\r\n\r\n.input{\r\n    display:flex;\r\n    background: rgb(234, 234, 238);\r\n    align-items: center;\r\n    margin: auto;\r\n    border-radius: 6px;\r\n    width: 480px;\r\n    height: 65px;\r\n}\r\n\r\ninput{\r\n    width: 70%;\r\n    height: 60%;\r\n    background: transparent;\r\n    outline: none;\r\n    border: none;\r\n    border-radius: 16px;\r\n    font-size: 23px;\r\n    color: rgb(107, 106, 106);\r\n}\r\n\r\ninput::selection{\r\n    background: rgb(137, 82, 225);\r\n    color: white;\r\n}\r\n\r\nimg{\r\n    width: 25px;\r\n    height: 25px;\r\n    margin: 0px 30px;\r\n}\r\n\r\n\r\n/* *************** Submit Buttons **************** */\r\n.submit-container{\r\n    display: flex;\r\n    align-content: space-evenly;\r\n}\r\n\r\n.submit{\r\n    background-color: #9227d9;\r\n    color: white;\r\n    border-radius: 90px;\r\n    font-size: 23px;\r\n    font-weight: 600;\r\n\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    padding: 10px 65px;\r\n\r\n    margin: 0px 30px;\r\n    width: 300px;\r\n    height: 50px;\r\n    cursor: pointer;\r\n}\r\n\r\n.submit:hover{\r\n    background-color: #4a0379; \r\n    color: white;\r\n}\r\n\r\n.gray{\r\n    color: gray;\r\n}\r\n\r\n.Accessory{\r\n    width: 700px;\r\n    height: 700px;\r\n    align-items: center;\r\n    border-radius: 30px;\r\n    background-image: url(\"../Assets/accessory\\ background.jpg\");\r\n    background-size: cover;\r\n}\r\n\r\n.Form{\r\n    display:flex;\r\n    align-content: space-evenly;\r\n    gap: 100px;\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Components/LoginSignup/LoginSignup.css b/src/Components/LoginSignup/LoginSignup.css
+--- a/src/Components/LoginSignup/LoginSignup.css	
++++ b/src/Components/LoginSignup/LoginSignup.css	
+@@ -19,7 +19,7 @@
+ 
+ .header-text{
+     font-size: 50px;
+-    color: #360093;
++    color: #02052f;
+     margin: 60px 15px;
+     cursor: pointer;
+ }
+@@ -57,7 +57,7 @@
+ }
+ 
+ input::selection{
+-    background: rgb(137, 82, 225);
++    background: #02052f;
+     color: white;
+ }
+ 
+@@ -75,7 +75,7 @@
+ }
+ 
+ .submit{
+-    background-color: #9227d9;
++    background-color: #02052f;
+     color: white;
+     border-radius: 90px;
+     font-size: 23px;
+@@ -93,7 +93,7 @@
+ }
+ 
+ .submit:hover{
+-    background-color: #4a0379; 
++    background-color: #02052f;
+     color: white;
+ }
+ 
+@@ -106,7 +106,7 @@
+     height: 700px;
+     align-items: center;
+     border-radius: 30px;
+-    background-image: url("../Assets/accessory\ background.jpg");
++    background-image: url("../Assets/accessory background.jpg");
+     background-size: cover;
+ }
+ 
+Index: src/Views/Homepage.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from \"react\";\r\n// import LoginSignup from \"../Components/LoginSignup/LoginSignup\";\r\n\r\nimport NavBar from \"../Components/NavBar/Menu\"\r\nimport Product from \"../Components/Product/Product\";\r\nimport MobileBtn from \"../Components/Button/MobileBtn\";\r\n\r\n\r\nconst Homepage=() =>{\r\n    var phone1={\r\n        id:1,\r\n        name:'Iphone 13 Pro Max',\r\n        brand:'Apple',\r\n        description: '256GB - 4GB RAM - 6.5\\' OLED Display',\r\n        color:'Gold',\r\n        year:2021,\r\n        category:'mobiles',\r\n        price: 30000\r\n    }\r\n\r\n    return(\r\n            <div>\r\n             <NavBar/>\r\n                {/*<div>*/}\r\n                {/*    <MobileBtn/>*/}\r\n                {/*    <div className=\"row\">*/}\r\n                {/*        <Product data={phone1}/>*/}\r\n\r\n                {/*    </div>*/}\r\n\r\n                {/*</div>*/}\r\n\r\n            </div>\r\n    );\r\n\r\n}\r\nexport default Homepage
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Views/Homepage.js b/src/Views/Homepage.js
+--- a/src/Views/Homepage.js	
++++ b/src/Views/Homepage.js	
+@@ -21,14 +21,14 @@
+     return(
+             <div>
+              <NavBar/>
+-                {/*<div>*/}
+-                {/*    <MobileBtn/>*/}
+-                {/*    <div className="row">*/}
+-                {/*        <Product data={phone1}/>*/}
++                <div>
++                    <MobileBtn/>
++                    <div className="row">
++                        <Product data={phone1}/>
+ 
+-                {/*    </div>*/}
++                    </div>
+ 
+-                {/*</div>*/}
++                </div>
+ 
+             </div>
+     );
