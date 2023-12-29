@@ -15,7 +15,6 @@ const logout = async (req, res) => {
 
  
  
- 
 const LoginSignup = async (req, res) => {
  
  
@@ -41,7 +40,7 @@ const LoginSignup = async (req, res) => {
             }
             else {
                 // Password Hashing
-                userModel.signUpUser(name, email, password);
+                userModel.add(name, email, password);
                 console.log('added!');
                 res.send("added!");
  
@@ -61,7 +60,6 @@ const LoginSignup = async (req, res) => {
                 res.send("email correct");
                 const results1 = await userModel.checkPass(email);
                 console.log(results1);
-               
                 if (results1.length > 0 && password == results1[0].password) {
                     userModel.update(email);
                     console.log("correct password");
@@ -82,6 +80,8 @@ const LoginSignup = async (req, res) => {
         }
     }
 }
+ 
+
  
 module.exports =  {
   logout,
