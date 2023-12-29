@@ -10,7 +10,7 @@ const ContactUsView = (req, res) => {
     //     });
     //  });
 
-    res.render("contactUs");
+    res.send("ok2");
 };
 const ContactUsUpdate= async (req,res)=>{
     console.log("fok el dee2a");

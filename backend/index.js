@@ -3,6 +3,7 @@ const app = express();
 const cors = require('cors');
 const router = express.Router();
 const loginController = require('./controllers/loginController');
+const contactUsController = require('./controllers/contactUsController');
 const bodyParser = require('body-parser');
 const cartController = require('./controllers/cartController');
 const clientProductController = require('./controllers/clientProductController');
@@ -27,7 +28,7 @@ app.use(express.urlencoded({ extended: true }));
 //app.get('/:id', cartController.cartView);
 app.use(cors());
 app.post('/login',loginController.loginUser)
-
+app.get('/contactUs',contactUsController.ContactUsView)
 
  
 // Route to show product details by name
