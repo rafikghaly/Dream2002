@@ -1,5 +1,6 @@
 // controllers/ProductController.js
 const CartModel = require('../models/Cart');
+const hisModel = require('../models/history');
 const userModel = require('../models/User');
 const ProductModel = require('../models/Product');
 const connection = require('../models/connection.js');
@@ -63,9 +64,9 @@ const addToCart = async (req, res) => {
 };
 
 const CheckOut = async (req, res) => {
-  CartModel.CalPrice()
-
-
+  CartModel.CalPrice();
+  his = hisModel.addtohistory();
+  console.log(his);
 };
 
 module.exports = {

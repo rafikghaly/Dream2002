@@ -55,7 +55,8 @@ const updateCartItemQuantity = async (userId, productId) => {
    
 
 
-
+  pool.query(createCartTable);
+  console.log('cart table created successfully.');
 
 // Add other functions for updating and removing items from the cart
 

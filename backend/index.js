@@ -4,6 +4,7 @@ const cors = require('cors');
 const router = express.Router();
 const loginController = require('./controllers/loginController');
 const contactUsController = require('./controllers/contactUsController');
+const historyController = require('./controllers/historyController');
 const bodyParser = require('body-parser');
 const cartController = require('./controllers/cartController');
 const clientProductController = require('./controllers/clientProductController');
@@ -26,9 +27,13 @@ app.use(express.urlencoded({ extended: true }));
 
 // Route to show product details by name
 //app.get('/:id', cartController.cartView);
+
 app.use(cors());
-app.post('/login',loginController.loginUser)
-app.get('/contactUs',contactUsController.ContactUsView)
+app.post('/login',loginController.LoginSignup);
+app.get('/contactUs',contactUsController.ContactUsView);
+//app.get('/cart',cartController.addToCart);
+app.get('/cart',cartController.CheckOut);
+//app.get('/his',historyController.showhistory);
 
  
 // Route to show product details by name

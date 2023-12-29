@@ -14,6 +14,16 @@ const Menu = () => {
     }
     
 
+    function gethistory(){
+        axios.get('http://localhost:4111/history') // this is back
+        .then(res => {
+            if (res.data === 'ok2'){
+                window.location.href = '/About'; // this is front
+            }
+        })
+    }
+    
+
     return (
         <nav>
             <div className="logo-container">
@@ -23,7 +33,7 @@ const Menu = () => {
 
             <div className="links">
                 <ul>
-                    <li><a href={'/about'}>About</a></li>
+                    <li><a onClick={gethistory}>About</a></li>
                     <li><a onClick={getContact}>Contact</a></li>
                     <li><a href={'/mobile'}>Mobiles</a></li>
                     <li><a href={'/laptop'}>Laptops</a></li>

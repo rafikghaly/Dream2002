@@ -34,6 +34,20 @@ return rows.length > 0 ? rows : null;
 const update =async(email)=>{
   await pool.query('UPDATE User SET is_online = TRUE WHERE email = ?', [email]);
 }
+
+
+const logoutt =async(email)=>{
+  console("LOGGGOUTTT MODEELLLL");
+  await pool.query('UPDATE User SET is_online = FALSE WHERE email = ?', [email]);
+}
+
+
+const getemail = async()=>{
+  const [rows]= await pool.query('SELECT email FROM User WHERE is_online = TRUE');
+  return rows.length > 0 ? rows : null;
+}
+
+
 const getusers=async()=>{
   const[rows]=await pool.query('SELECT * FROM User WHERE is_online = TRUE');
   console.log(rows);
@@ -41,7 +55,7 @@ const getusers=async()=>{
 }
 const getid = async()=>{
   const [rows]= await pool.query('SELECT id FROM User WHERE is_online = TRUE');
-  return rows;
+  return rows.length > 0 ? rows : null;
 }
 const updatename =async(name,id)=>{
  await pool.query('UPDATE User SET name =?  WHERE is_online = TRUE AND id=?',[name,id])
@@ -57,14 +71,8 @@ pool.query(createUserTable);
 console.log('Client table created successfully.');
 
 module.exports = {
- validate,
+ validate,logoutt,getemail,
  add,checkPass,
  update,getusers,getid,
  updatename,updateemail,updatelocation
 };
-
-// Create the User table
-// connection.query(createUserTable, (err, results, fields) => {
-//   if (err) throw err;
-//   console.log('User table created successfully.');
-// });
