@@ -6,6 +6,7 @@ import Contact from "./Views/Contact"
 import About from "./Views/About"
 import Mobiles from "./Views/Mobiles"
 import Laptops from "./Views/Laptops"
+import Cart from "./Views/Cart"
 import React from "react";
 
 
@@ -23,6 +24,7 @@ function App() {
                     <Route path="/about" element={<About/>}></Route>
                     <Route path="/mobile" element={<Mobiles/>}></Route>
                     <Route path="/laptop" element={<Laptops/>}></Route>
+                    <Route path="/cart" element={<Cart/>}></Route>
                 </Routes>
             </BrowserRouter>
 

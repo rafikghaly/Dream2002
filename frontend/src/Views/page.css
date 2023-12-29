@@ -35,3 +35,19 @@
     margin-right: 0;
 
 }
+.col{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+}
+
+.empty_cart_img{
+    width: 250px;
+    height: 250px;
+}
+
+.empty_cart_msg{
+    text-align: center;
+}
