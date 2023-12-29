@@ -18,7 +18,11 @@ const LoginSignup = () => {
     //console.log("HENAAAA")
     event.preventDefault();
     axios.post('http://localhost:4111/login',{email,password,action})
-    .then(res =>console.log(res))
+    .then(res => {
+        if (res.data === 'correct password'){
+            window.location.href = '/home'; // this is front
+        }
+    })
     .catch(err =>console.log(err));
   }
   
@@ -26,7 +30,11 @@ const LoginSignup = () => {
     //console.log("HENAAAA")
     event.preventDefault();
     axios.post('http://localhost:4111/login',{name,email,password,confirmPassword,action})
-    .then(res =>console.log(res))
+    .then(res => {
+        if (res.data === 'Ok'){
+            window.location.href = '/home'; // this is front
+        }
+    })
     .catch(err =>console.log(err));
   }
 

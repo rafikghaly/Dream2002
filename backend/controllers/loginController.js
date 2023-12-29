@@ -1,7 +1,4 @@
-const express = require('express');
-const bcrypt = require('bcryptjs');
 const userModel = require('../models/User');
-const connection = require('../models/connection.js');
 
 //to be tested
 const logout = async (req, res) => {
@@ -11,12 +8,8 @@ const logout = async (req, res) => {
     userModel.logoutt(userModel.getemail());
   }
 }
-
-
- 
  
 const LoginSignup = async (req, res) => {
- 
  
     if (req.body.action == "Sign Up") {
  
@@ -31,8 +24,6 @@ const LoginSignup = async (req, res) => {
         else {
             // Validation
           const user = await userModel.validate(email);
-          //console.log("el user")
-          //console.log(user)
             if (user) {
                 console.log(user);
                 console.log("email exists");
@@ -41,8 +32,9 @@ const LoginSignup = async (req, res) => {
             else {
                 // Password Hashing
                 userModel.add(name, email, password);
-                console.log('added!');
-                res.send("added!");
+                userModel.update(email);
+                console.log('Ok');
+                res.send("Ok");
  
             }
  
@@ -56,27 +48,18 @@ const LoginSignup = async (req, res) => {
             // Validation
             const results = await userModel.validate(email);
             if (results.length > 0 && email == results[0].email) {
-                console.log("email correct");
-                res.send("email correct");
                 const results1 = await userModel.checkPass(email);
                 console.log(results1);
                 if (results1.length > 0 && password == results1[0].password) {
                     userModel.update(email);
                     console.log("correct password");
-                  //   res.send("correct password");
-                  //  res.redirect("/contactUs");
- 
- 
+                    res.send("correct password");
                 }
                 else {
                     console.log("Wrong password");
-                 //   res.send("Wrong password");
- 
+                    res.send("Wrong password");
                 }
- 
- 
             }
- 
         }
     }
 }

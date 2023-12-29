@@ -1,96 +1,64 @@
-const express = require('express');
-const bcrypt = require('bcryptjs');
-const userModel = require('../models/User');
 const connection = require('../models/connection.js');
- 
- 
-const LoginSignup = async (req, res) => {
- 
- 
-    if (req.body.action == "Sign Up") {
- 
-        const { name, email, password, confirmPassword } = req.body;
- 
-        if (!name || !email || !password || !confirmPassword) {
-            console.log("Fill empty fields");
-        }
-        if (password !== confirmPassword) {
-            console.log("Password must match");
-        }
-        else {
-            // Validation
-          const user = await userModel.validate(email);
-          //console.log("el user")
-          //console.log(user)
-            if (user) {
-                console.log(user);
-                console.log("email exists");
-                res.send("Email Exists")
-            }
-            else {
-                // Password Hashing
-                userModel.add(name, email, password);
-                console.log('added!');
-                res.send("added!");
- 
-            }
- 
-        }
-    }
-    else {
-        const { email, password } = req.body;
-        if (!email || !password) {
-            console.log("Fill empty fields");
-        } else {
-            // Validation
-            const results = await userModel.validate(email);
-            if (results.length > 0 && email == results[0].email) {
-                console.log("email correct");
-                res.send("email correct");
-                const results1 = await userModel.checkPass(email);
-                console.log(results1);
-                if (results1.length > 0 && password == results1[0].password) {
-                    userModel.update(email);
-                    console.log("correct password");
-                  //   res.send("correct password");
-                  //  res.redirect("/contactUs");
- 
- 
-                }
-                else {
-                    console.log("Wrong password");
-                 //   res.send("Wrong password");
- 
-                }
- 
- 
-            }
- 
-        }
-    }
-}
- 
-module.exports =  {
-    LoginSignup
-};
+  const mysql = require('mysql2/promise');
 
+  const pool = mysql.createPool({
+    host: 'localhost',
+    user: 'newuser',
+    password: 'MinaMinaMina',
+    database: 'mydb',
+  });
 
-
-const logoutt =async(email)=>{
-  console("LOGGGOUTTT MODEELLLL");
-  await pool.query('UPDATE User SET is_online = FALSE WHERE email = ?', [email]);
-}
-
-
-const getemail = async()=>{
-  const [rows]= await pool.query('SELECT email FROM User WHERE is_online = TRUE');
+  // Define the User table
+  const createUserTable = `CREATE TABLE IF NOT EXISTS User (
+    id INT AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    location VARCHAR(255) DEFAULT 'Borkyna Fasio',
+    date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    is_online BOOLEAN DEFAULT FALSE,
+    PRIMARY KEY(id)
+  )`;
+  const validate = async(email)=>{
+    const [rows]= await pool.query( 'SELECT * FROM User WHERE email = ?', [email]);
+    return rows.length > 0 ? rows : null;
+  }
+  const add =async(name,email,password)=>{
+    await pool.query('INSERT INTO User SET ?', {name: name, email: email, password: password});
+    return null;
+  }
+  const checkPass= async(email)=>{
+  const [rows]=await pool.query('SELECT password FROM User WHERE email = ?', [email]);
   return rows.length > 0 ? rows : null;
-}
+  }
+  const update =async(email)=>{
+    await pool.query('UPDATE User SET is_online = TRUE WHERE email = ?', [email]);
+  }
+  const getusers=async()=>{
+    const[rows]=await pool.query('SELECT * FROM User WHERE is_online = TRUE');
+    console.log(rows);
+    return rows.length > 0 ? rows : null;
+  }
+  const getid = async()=>{
+    const [rows]= await pool.query('SELECT id FROM User WHERE is_online = TRUE');
+    return rows.length > 0 ? rows : null;
+  }
+  const updatename =async(name,id)=>{
+  await pool.query('UPDATE User SET name =?  WHERE is_online = TRUE AND id=?',[name,id])
+  }
+  const updateemail=async(email,id)=>{
+    await pool.query('UPDATE User SET email =?  WHERE is_online = TRUE AND id=?',[email,id])
+  }
+  const updatelocation =async(location,id)=>{
+    await pool.query('UPDATE User SET location =?  WHERE is_online = TRUE AND id=?',[location,id])
+  }
 
+  pool.query(createUserTable);
+  console.log('Client table created successfully.');
 
-module.exports = {
- validate,logoutt,getemail,
- add,checkPass,
- update,getusers,getid,
- updatename,updateemail,updatelocation
-};
+  module.exports = {
+  validate,
+  add,checkPass,
+  update,getusers,getid,
+  updatename,updateemail,updatelocation
+  };
