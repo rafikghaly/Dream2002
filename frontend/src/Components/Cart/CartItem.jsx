@@ -2,7 +2,7 @@ import React from 'react'
 import trash_icon from '../Assets/trash-bin.png'
 import './Cart.css'
 import axios from 'axios'
-
+//RES NADOHA FI FRONT FIHA ITEM GOWA EL CART
 function getCart(){
     console.log('getcart func')
     axios.get('http://localhost:4111/cart')
@@ -16,7 +16,7 @@ function getCart(){
 export const CartItem = (props) => {
     const handleDeleteClick = () => {
         props.onDelete();
-        getCart();
+        
     };
 
     const data = props.data;

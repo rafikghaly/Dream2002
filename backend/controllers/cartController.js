@@ -40,6 +40,7 @@ const cartView = async (req, res) => {
     }));
     console.log(resultList);
     //price ,product name, id product ,category
+    
     res.send(resultList);
    // res.render('cart', { cart: cartWithDetails });
   } catch (error) {
