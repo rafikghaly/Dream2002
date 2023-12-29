@@ -1,8 +1,24 @@
 import React from 'react'
 import trash_icon from '../Assets/trash-bin.png'
 import './Cart.css'
+import axios from 'axios'
+
+function getCart(){
+    console.log('getcart func')
+    axios.get('http://localhost:4111/cart')
+        //res gowha el products ll front
+        .then(res =>console.log(res))
+        .catch(err =>console.log(err));
+};
+
+
 
 export const CartItem = (props) => {
+    const handleDeleteClick = () => {
+        props.onDelete();
+        getCart();
+    };
+
     const data = props.data;
     const product_img = require(`../Assets/${data.category}/${data.id}.jpg`);
 
@@ -19,7 +35,8 @@ export const CartItem = (props) => {
 
             <p className="text">{data.price} EGP</p>
 
-            <img src={trash_icon} alt="trash icon" className="icon"/>
+            <img onClick={handleDeleteClick} src={trash_icon} alt="trash icon" className="icon"/>
+            
         </div>
     )
 }

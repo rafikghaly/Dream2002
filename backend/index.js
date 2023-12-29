@@ -7,6 +7,7 @@ const contactUsController = require('./controllers/contactUsController');
 const bodyParser = require('body-parser');
 const cartController = require('./controllers/cartController');
 const clientProductController = require('./controllers/clientProductController');
+const showproduct =require('./controllers/showproductController');
 
 app.set('view engine', 'ejs');
 
@@ -26,11 +27,24 @@ app.use(express.urlencoded({ extended: true }));
 
 // Route to show product details by name
 //app.get('/:id', cartController.cartView);
-app.use(cors());
-app.post('/login',loginController.loginUser)
-app.get('/contactUs',contactUsController.ContactUsView)
 
- 
+//EL CODE ELI SHA8AL
+// app.use(cors());
+// app.use('/', require('./routes/login'));
+// app.post('/login',loginController.loginUser)
+// app.get('/contactUs',contactUsController.ContactUsView)
+
+//ELI BATNYLO AGRBO 
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use('/', require('./routes/login'));
+app.use('/contactUs', require('./routes/contactUs'));
+//app.use('/showproduct',require('./routes/showproduct'));
+app.post('/showproduct',showproduct.productView);
+app.get('/contactUs',contactUsController.ContactUsView);
+app.get('/cart',cartController.cartView);
+
 // Route to show product details by name
 // app.get('/products/:id', clientProductController.showProductByName);
 // Routes

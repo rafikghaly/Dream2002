@@ -3,14 +3,19 @@ const CartModel = require('../models/Cart');
 const userModel = require('../models/User');
 const ProductModel = require('../models/Product');
 const connection = require('../models/connection.js');
+const { json } = require('express');
 
 const cartView = async (req, res) => {
+  console.log('cartView');
+
   try {
     // Assuming you have the user ID available in req.user.id after authentication
-    const userId = req.params.id;
-
+    // const userId = req.params.id;
+    const userId = await userModel.getid();
+    //console.log(userId[0]['id']);
     // Get the cart items for the user
-    const cartItems = await CartModel.getCartItems(userId);
+    const cartItems = await CartModel.getCartItems(userId[0]['id']);
+    //console.log(cartItems);
 
     // Fetch product details for each item in the cart
     const cartWithDetails = await Promise.all(
@@ -19,15 +24,24 @@ const cartView = async (req, res) => {
         
         // Fetch the product details from the ProductModel based on the productId
         const productDetails = await ProductModel.getProductByName(productId)
-        console.log(productDetails)
+       // console.log(productDetails)
         return {
           cartItem,
           productDetails,
         };
       })
     );
-
-    res.render('cart', { cart: cartWithDetails });
+    console.log(cartWithDetails);
+    const resultList = cartWithDetails.map(item => ({
+      id: item.cartItem.id,
+      name: item.productDetails.name,
+      price: item.productDetails.price,
+      category:item.productDetails.category
+    }));
+    console.log(resultList);
+    //price ,product name, id product ,category
+    res.send(resultList);
+   // res.render('cart', { cart: cartWithDetails });
   } catch (error) {
     console.error('Error fetching cart:', error);
     res.status(500).send('Internal Server Error');
@@ -41,7 +55,7 @@ const addToCart = async (req, res) => {
     const productId = req.body.productId;
     // Assuming that CartModel has a method addToCart that handles the database operations
     const userId= await userModel.getid();
-    console.log(Object.values(userId));
+    // console.log(Object.values(userId));
     const existingCartItem = await CartModel.getPRODUCTid(Object.values(userId), productId);
       if (existingCartItem.length) {
         // If the product is already in the cart, update the quantity

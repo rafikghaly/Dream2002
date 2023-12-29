@@ -1,13 +1,19 @@
 /************* Item Cards *************/
 .item{
+    margin: 10px;
+    align-self: center;
     padding: 15px;
     border-radius: 10px;
     display: flex;
-    justify-content: space-evenly;
-    width: 100%;
+    justify-content: space-between;
+    width: 60%;
     height: 50px;
-    background: #9badf5;
+    background: #e7e7ee;
     align-items: center;
+}
+
+.item:hover{
+    background: #d2d2d9;
 }
 
 .item-image{
@@ -23,4 +29,9 @@
 
 .name-id p{
     margin: 0;
+}
+
+.icon{
+    position: relative;
+    right: 0;
 }

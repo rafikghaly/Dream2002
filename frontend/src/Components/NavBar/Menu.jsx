@@ -12,6 +12,27 @@ const Menu = () => {
             }
         })
     }
+    //FOFO
+    function getProduct1(){
+        const dataToSend='mobiles';
+        console.log('ana dost mobiles');
+        console.log({dataToSend});
+        axios.post('http://localhost:4111/showproduct', {dataToSend})
+        //res gowha el products ll front
+        .then(res =>console.log(res))
+        .catch(err =>console.log(err));
+    };
+    function getProduct2(){
+        const dataToSend='laptop';
+        console.log('ana dost mobiles');
+        console.log({dataToSend});
+        axios.post('http://localhost:4111/showproduct', {dataToSend})
+        //res gowha el products ll front
+        .then(res =>console.log(res))
+        .catch(err =>console.log(err));
+    };
+
+    
     
 
     return (
@@ -25,11 +46,11 @@ const Menu = () => {
                 <ul>
                     <li><a href={'/about'}>About</a></li>
                     <li><a onClick={getContact}>Contact</a></li>
-                    <li><a href={'/mobile'}>Mobiles</a></li>
-                    <li><a href={'/laptop'}>Laptops</a></li>
+                    {/* FOFO */}
+                    <li><a onClick={getProduct1}>Mobiles</a></li>
+                    <li><a onClick={getProduct2}>Laptops</a></li> 
                 </ul>
             </div>
-
         </nav>
     )
 }

@@ -24,5 +24,6 @@ export const ProductPage = (props) => {
                 <p><b>Price: </b>{data.price}</p>
             </div>
         </div>
+        
     )
 }
