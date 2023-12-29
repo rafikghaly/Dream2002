@@ -32,6 +32,9 @@ const getProductByCategory = async(cat) =>{
 const insertProduct = async(name, price,brand,description,category,color,year)=>{
   await pool.query('INSERT INTO Product SET ?', { name, price, brand, description, category, color, year });
 };
+const removeProduct = async(id)=>{
+  await pool.query('DELETE FROM Product WHERE id = ?', {id});
+};
 const getProductPrice =async(id)=>{
   const [rows] = await pool.query('SELECT price FROM Product WHERE id = ?', [id]);
   console.log(rows[0]);
@@ -44,6 +47,7 @@ module.exports = {
   getProductByName,
   getProductByCategory,
   insertProduct,
+  removeProduct,
   getProductPrice
 };
 

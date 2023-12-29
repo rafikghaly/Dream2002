@@ -41,8 +41,19 @@ const addProduct = (req, res) => {
 
     };
 
+    const removeProduct = (req,res) => {
+      const id = req.body;
+        results = ProductModel.getProductByName(id);
+          if (results.length > 0) {
+            console.log("Product  exists");
+            ProductModel.removeProduct(id);
+            console.log("Product  removed");
+          } 
+      };
+
   module.exports =  {
     addProductView,
     removeProductView,
-    addProduct
+    addProduct,
+    removeProduct
 };

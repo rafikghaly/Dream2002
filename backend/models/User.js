@@ -34,6 +34,14 @@ const connection = require('../models/connection.js');
   const update =async(email)=>{
     await pool.query('UPDATE User SET is_online = TRUE WHERE email = ?', [email]);
   }
+  const logoutt =async(email)=>{
+    console("LOGGGOUTTT MODEELLLL");
+    await pool.query('UPDATE User SET is_online = FALSE WHERE email = ?', [email]);
+  }
+  const getemail = async()=>{
+    const [rows]= await pool.query('SELECT email FROM User WHERE is_online = TRUE');
+    return rows.length > 0 ? rows : null;
+  }
   const getusers=async()=>{
     const[rows]=await pool.query('SELECT * FROM User WHERE is_online = TRUE');
     console.log(rows);
@@ -59,6 +67,6 @@ const connection = require('../models/connection.js');
   module.exports = {
   validate,
   add,checkPass,
-  update,getusers,getid,
+  update,logoutt,getemail,getusers,getid,
   updatename,updateemail,updatelocation
   };
