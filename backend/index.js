@@ -40,7 +40,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.post('/login',loginController.loginUser)
 app.get('/contactUs',contactUsController.ContactUsView)
-
+//app.use('/showproduct',require('./routes/showproduct'));
+app.post('/showproduct',showproduct.productView);
+app.get('/contactUs',contactUsController.ContactUsView);
+app.get('/cart',cartController.cartView);
  
 // Route to show product details by name
 // app.get('/products/:id', clientProductController.showProductByName);
