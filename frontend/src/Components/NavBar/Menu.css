@@ -56,3 +56,8 @@ nav ul li a{
 nav ul li a:hover{
     background: #212467;
 }
+
+.cart-icon{
+
+    margin-left: 100%;
+}

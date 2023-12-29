@@ -17,6 +17,16 @@ const Homepage=() =>{
         category:'mobiles',
         price: 30000
     }
+    var phone2={
+        id:2,
+        name:'Galaxy s21 ultra',
+        brand:'Samsung',
+        description: '256GB - 4GB RAM - 6.5\' OLED Display',
+        color:'Black',
+        year:2021,
+        category:'mobiles',
+        price: 29000
+    }
 
     return(
             <div>
@@ -35,9 +45,9 @@ const Homepage=() =>{
                     </div>
                     <div className="row">
                         <Product data={phone1}/>
+                        <Product data={phone2}/>
                         <Product data={phone1}/>
-                        <Product data={phone1}/>
-                        <Product data={phone1}/>
+                        <Product data={phone2}/>
 
                     </div>
                     <div className="row">

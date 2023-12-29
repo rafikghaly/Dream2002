@@ -1,0 +1,43 @@
+.product-image{
+    width: auto;
+    height: auto;
+}
+
+table{
+    border: none;
+    width: 600px;
+    height: 350px;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+.att{
+    font-weight: bold;
+}
+
+table td{
+    margin: 30px;
+    border: none;
+    padding: 10px;
+}
+
+.add{
+    background-color: #02052f;
+    margin: 30px;
+    width: 100%;
+    font-size: 23px;
+    padding: 10px;
+    color: white;
+    border-radius: 90px;
+    font-weight: 600;
+}
+
+.add:hover{
+    background-color: #0a0c54;
+    color: white;
+}
+
+.product-info{
+    align-self: flex-start;
+    margin-bottom: 30px;
+}
