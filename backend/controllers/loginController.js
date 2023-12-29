@@ -17,9 +17,11 @@ const LoginSignup = async (req, res) => {
  
         if (!name || !email || !password || !confirmPassword) {
             console.log("Fill empty fields");
+            res.send("Fill empty fields")
         }
-        if (password !== confirmPassword) {
+        else if (password !== confirmPassword) {
             console.log("Password must match");
+            res.send("Password must match")
         }
         else {
             // Validation
@@ -44,6 +46,7 @@ const LoginSignup = async (req, res) => {
         const { email, password } = req.body;
         if (!email || !password) {
             console.log("Fill empty fields");
+            res.send("Fill empty fields");
         } else {
             // Validation
             const results = await userModel.validate(email);
@@ -56,8 +59,8 @@ const LoginSignup = async (req, res) => {
                     res.send("correct password");
                 }
                 else {
-                    console.log("Wrong password");
-                    res.send("Wrong password");
+                    console.log("Incorrect Email or Password");
+                    res.send("Incorrect Email or Password");
                 }
             }
         }

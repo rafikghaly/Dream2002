@@ -31,6 +31,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.post('/login',loginController.LoginSignup);
 app.get('/contactUs',contactUsController.ContactUsView);
+app.post('/contactUs',contactUsController.ContactUsUpdate);
 //app.get('/cart',cartController.addToCart);
 app.get('/cart',cartController.CheckOut);
 //app.get('/his',historyController.showhistory);
