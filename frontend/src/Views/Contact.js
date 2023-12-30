@@ -5,10 +5,7 @@ const Contact =() =>{
     return(
         <div>
             <NavBar/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
+
             <ContactUs/>
 
         </div>

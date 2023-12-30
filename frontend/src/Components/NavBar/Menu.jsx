@@ -1,6 +1,7 @@
 //import React from 'react'
 import './Menu.css'
 import logo from '../Assets/logo.gif'
+import cart_icon from '../Assets/nav_cart.png'
 import axios from 'axios'
 import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
@@ -87,9 +88,6 @@ const Menu = () => {
     // };
 
 
-    
-    
-
     function gethistory(){
         axios.get('http://localhost:4111/history') // this is back
         .then(res => {
@@ -119,6 +117,9 @@ const Menu = () => {
                     <li><Link to='/cart' onClick={getCart} >Cart</Link> </li>
                 </ul>
             </div>
+
+            <a href={'/cart'}> <img className={'cart-icon'} src={cart_icon} alt="cart icon"/> </a>
+
         </nav>
     )
 }
