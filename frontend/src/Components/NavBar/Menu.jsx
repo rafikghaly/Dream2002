@@ -10,7 +10,6 @@ const getCart = async()=>{
     //console.log('IN THE FUNC');
     try {
         const response = await axios.get('http://localhost:4111/cart');
-        //console.log('res'+response.data);
         return response.data;
       } catch (error) {
         console.error('Error fetching cart items:', error);

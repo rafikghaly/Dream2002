@@ -25,9 +25,9 @@ const cartView = async (req, res) => {
     );
 
     const resultList= cartWithDetails.map(item => ({
-      id: item.cartItem.id,
+      id: item.productDetails.id,
       name: item.productDetails.name,
-      price: item.productDetails.price,
+      price: item.cartItem.totalPrice,
       category:item.productDetails.category
     }));
     
