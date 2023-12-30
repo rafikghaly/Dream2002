@@ -1,6 +1,7 @@
 import React from 'react'
 import './Menu.css'
 import logo from '../Assets/logo.gif'
+import cart_icon from '../Assets/nav_cart.png'
 import axios from 'axios'
 const Menu = () => {
 
@@ -32,9 +33,6 @@ const Menu = () => {
         .catch(err =>console.log(err));
     };
 
-    
-    
-
     function gethistory(){
         axios.get('http://localhost:4111/history') // this is back
         .then(res => {
@@ -61,6 +59,9 @@ const Menu = () => {
                     <li><a onClick={getProduct2}>Laptops</a></li> 
                 </ul>
             </div>
+
+            <a href={'/cart'}> <img className={'cart-icon'} src={cart_icon} alt="cart icon"/> </a>
+
         </nav>
     )
 }

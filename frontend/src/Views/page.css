@@ -51,3 +51,59 @@
 .empty_cart_msg{
     text-align: center;
 }
+.userinfo{
+
+    align-items: center;
+    margin-top:50px;
+    margin-left: 25%;
+    padding: 20px;
+    border-radius: 6px;
+    width: 700px;
+    height: 400px;
+    background: #dcdce8;
+
+}
+.usericon{
+    width: 100px;
+    height: 100px;
+    align-self: center;
+    margin-top: 0px;
+    margin-left:35% ;
+}
+.name{
+    background: rgb(217, 217, 225);
+    margin-left:2px;
+    align-self: center;
+    margin-top:60px;
+    border-radius: 6px;
+    width: 350px;
+    height: 65px;
+
+}
+.edit{
+    width: 100px;
+    height: 40px;
+    background: #02052f;
+    border-radius: 6px;
+    color: white;
+    font-size: medium;
+    margin-left: 320px;
+    margin-bottom: 5px;
+    padding-left: 25px;
+    padding-right: 25px;
+
+}
+.he{
+    margin-left: 210px;
+    margin-bottom: 20px;
+
+}
+.info{
+    display:flex;
+    background: rgb(234, 234, 238);
+    align-items: center;
+    margin-left: -10px;
+    border-radius: 6px;
+    width: 380px;
+    height: 65px;
+}

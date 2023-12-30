@@ -51,14 +51,21 @@ const Homepage=() =>{
                     <div>
                         <img className="sale" src={sale} alt='Sale'/>
                     </div>
-                    <div className='row'>
-                    { items_list.length===0 ?   (  <p>Nol Products.</p>                                     
-                       )    
-                                                :                                
-                    (items_list.map((item) => (  <Product data={item}/>                    
-                     )))   
-                  } 
-                  </div> 
+                    <div className="row">
+                        <Product data={phone1}/>
+                        <Product data={phone1}/>
+                        <Product data={phone1}/>
+                        <Product data={phone1}/>
+
+                    </div>
+                    <div className="row">
+                        <Product data={phone1}/>
+                        <Product data={phone1}/>
+                        <Product data={phone1}/>
+                        <Product data={phone1}/>
+
+                    </div>
+
                 </div>
 
             </div>
