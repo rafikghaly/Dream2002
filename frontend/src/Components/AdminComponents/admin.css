@@ -1,0 +1,118 @@
+.item{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.admin-comp{
+    background: #d7e1e7;
+    padding: 30px;
+    width: 80%;
+    align-items: center;
+    margin-left: 50px;
+    border-radius: 10px;
+}
+
+.admin-buttons{
+    display: flex;
+    margin-left: 100px;
+}
+
+.admin-buttons button{
+    cursor: pointer;
+    background: #f1f1f1;
+    width: 100px;
+    height: 60px;
+
+    border-radius: 15px;
+    border: 1px solid black;
+}
+
+.admin-buttons button:hover{
+    background: lightgray;
+}
+
+
+.admin-item-slot{
+    text-align: left;
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 10px;
+    transition: 0.2s ease;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.admin-item-slot:hover{
+    background: #3694dc;
+    color: white;
+}
+
+.add-product-input{
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+
+.add-product-input label{
+    width: 200px;
+}
+
+.add-product-input input[type='text'], .add-product-input input[type='number'], .add-product-input select{
+    background: white;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 8px;
+    width: 50%;
+    font-size: 15px;
+    padding: 5px;
+}
+
+.add-submit-button{
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 90%;
+    margin: 0;
+    margin-top: 30px;
+    align-self: center;
+    background: #d7e0e8;
+    cursor: pointer;
+}
+
+.add-submit-button:hover{
+    background: #5389d5;
+    color: white;
+}
+
+.admin-textarea{
+    background: white;
+    width: 90%;
+    border: 1px solid black;
+}
+
+.admin-title{
+    margin: 40px;
+}
+
+.category-button{
+    width: 100px;
+    height: 50px;
+    margin-top: 0;
+    margin-left: 30px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background: white;
+    cursor: pointer;
+}
+
+.category-button:hover{
+    background: #5389d5;
+    color: white;
+}
+
+

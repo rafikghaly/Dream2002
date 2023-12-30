@@ -5,15 +5,14 @@ import './Cart.css'
 export const CartItem = (props) => {
     const handleDeleteClick = () => {
         props.onDelete();
-        
     };
 
     const data = props.data;
     const product_img = require(`../Assets/${data.category}/${data.id}.jpg`);
 
     return (
-        <div className='item'>
-            { <img src={product_img} alt="product image" className="item-image"/> }
+        <div className='cart-item'>
+            <img src={product_img} alt="product image" className="item-image"/>
 
             <p className="text">{data.category}</p>
 
@@ -25,9 +24,6 @@ export const CartItem = (props) => {
             <p className="text">{data.price} EGP</p>
 
             <img onClick={handleDeleteClick} src={trash_icon} alt="trash icon" className="icon"/>
-            
         </div>
     )
 }
-
-

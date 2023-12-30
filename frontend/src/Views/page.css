@@ -6,9 +6,36 @@
 }
 .sale{
     width: 100%;
-    height: 480px;
+    height: 100%;
     margin: 0;
+}
+.userinfo{
 
+    align-items: center;
+    margin-top:50px;
+    margin-left: 25%;
+    padding: 20px;
+    border-radius: 6px;
+    width: 700px;
+    height: 400px;
+    background: #dcdce8;
+
+}
+.usericon{
+    width: 100px;
+    height: 100px;
+    align-self: center;
+    margin-top: 0px;
+    margin-left:35% ;
+}
+.name{
+    background: rgb(217, 217, 225);
+    margin-left:2px;
+    align-self: center;
+    margin-top:60px;
+    border-radius: 6px;
+    width: 350px;
+    height: 65px;
 }
 .mobilebuttons{
     width: 100%;
@@ -51,34 +78,13 @@
 .empty_cart_msg{
     text-align: center;
 }
-.userinfo{
 
-    align-items: center;
-    margin-top:50px;
-    margin-left: 25%;
-    padding: 20px;
-    border-radius: 6px;
-    width: 700px;
-    height: 400px;
-    background: #dcdce8;
-
-}
-.usericon{
-    width: 100px;
-    height: 100px;
-    align-self: center;
-    margin-top: 0px;
-    margin-left:35% ;
-}
-.name{
-    background: rgb(217, 217, 225);
-    margin-left:2px;
-    align-self: center;
-    margin-top:60px;
-    border-radius: 6px;
-    width: 350px;
-    height: 65px;
-
+.about-us-description{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    text-align: justify-all;
+    font-size: 20px;
 }
 .edit{
     width: 100px;
@@ -91,12 +97,23 @@
     margin-bottom: 5px;
     padding-left: 25px;
     padding-right: 25px;
-
 }
-.he{
-    margin-left: 210px;
-    margin-bottom: 20px;
+hr{
+    width: 200px;
+    height: 5px;
+    background: #0a0c54;
+    align-self:flex-start;
+    left: 0;
+    margin-left: 0;
+}
 
+.about-us-image{
+    background-image: url('../Components/Assets/about us.jpg'), linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,1));
+    background-size:cover;
+    background-position: center;
+    width: 50%;
+    height: 500px;
+    border-radius:50px;
 }
 .info{
     display:flex;
@@ -106,4 +123,8 @@
     border-radius: 6px;
     width: 380px;
     height: 65px;
+}
+.he{
+    margin-left: 210px;
+    margin-bottom: 20px;
 }
