@@ -1,29 +1,32 @@
-import React from "react";
+import React, {useState} from "react";
 import NavBar from "../Components/NavBar/Menu";
 import {useParams} from "react-router-dom";
 
 import './ProductInfo.css'
 import './page.css'
+import axios from 'axios'
 
 const ProductInfo =() =>{
 
     const {p_id} = useParams();
-    console.log(p_id);
+    const [item, setData] = useState("");
+    const [product_image, setImage] = useState("");
 
-    // There must be some function to return the item from the database given the id
+    axios.post('http://localhost:4111/productinfo',{p_id})
 
-    var item={
-        id:1,
-        name:'Iphone 13 Pro Max',
-        brand:'Apple',
-        description: '256GB - 4GB RAM - 6.5\' OLED Display',
-        color:'Gold',
-        year:2021,
-        category:'mobiles',
-        price: 30000
+    .then(res => {
+    if (res.data === 'Product not found'){
+    alert("product not found")
     }
-
-    const product_image = require(`../Components/Assets/mobiles/${p_id}.jpg`);
+    else {
+    setData(res.data)
+    const product_image = require(`../Components/Assets/${item.category}/${p_id}.jpg`);
+    setImage(product_image)
+    }
+    })
+    .catch(err =>console.log(err));
+    console.log(item);
+    
 
     return(
         <div>
@@ -58,7 +61,7 @@ const ProductInfo =() =>{
 
                         <tr>
                             <td className={'att'}>Description:</td>
-                            <td>(item.description)</td>
+                            <td>{item.description}</td>
                         </tr>
 
                         <tr>

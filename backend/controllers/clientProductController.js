@@ -1,24 +1,24 @@
 // controllers/ProductController.js
 const ProductModel = require('../models/Product');
 
-const showProductByName = async (req, res) => {
+const showProductByid = async (req, res) => {
   try {
-    const productName = req.params.id;
-
+   
+    const {p_id} =req.body;
     // Await the resolution of the promise returned by getProductByName
-    const product = await ProductModel.getProductByName(productName);
+    const product = await ProductModel.getProductByName(p_id);
 
     if (!product) {
-      res.status(404).send('Product not found');
+      res.send('Product not found');
     } else {
-      res.render('showProduct', { product });
+       res.send( product );
     }
   } catch (error) {
-    console.error('Error fetching product by name:', error);
+    console.error('Error fetching product by id:', error);
     res.status(500).send('Internal Server Error: ' + error.message);
   }
 };
 
 module.exports = {
-  showProductByName,
+  showProductByid,
 };
