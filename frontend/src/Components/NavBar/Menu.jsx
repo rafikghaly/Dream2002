@@ -43,6 +43,43 @@ const getCart = async()=>{
     //   console.error('Fetch error:', error);
     // });
 };
+const getProduct1= async()=>{
+    try {
+        const dataToSend='mobiles';
+        const response = await axios.post('http://localhost:4111/showproduct', {dataToSend});
+        //console.log('res'+response.data);
+        return response.data;
+      } catch (error) {
+        console.error('Error fetching cart items:', error);
+        throw error;
+    }
+    // const dataToSend='mobiles';
+    // //console.log('ana dost mobiles');
+    // //console.log({dataToSend});
+    // axios.post('http://localhost:4111/showproduct', {dataToSend})
+    // //res gowha el products ll front
+    // .then( res =>{// console.log(res.data);
+    //     return res.data;})
+    // .catch(err =>console.log(err));
+};
+const getProduct2 =async()=>{
+    try {
+        const dataToSend='laptop';
+        const response = await axios.post('http://localhost:4111/showproduct', {dataToSend});
+        //console.log('res'+response.data);
+        return response.data;
+      } catch (error) {
+        console.error('Error fetching cart items:', error);
+        throw error;
+    }
+    // const dataToSend='laptop';
+    // console.log('ana dost mobiles');
+    // console.log({dataToSend});
+    // axios.post('http://localhost:4111/showproduct', {dataToSend})
+    // //res gowha el products ll front
+    // .then(res =>console.log(res))
+    // .catch(err =>console.log(err));
+};
 
 
 
@@ -58,24 +95,7 @@ const Menu = () => {
         })
     }
     //FOFO
-    function getProduct1(){
-        const dataToSend='mobiles';
-        console.log('ana dost mobiles');
-        console.log({dataToSend});
-        axios.post('http://localhost:4111/showproduct', {dataToSend})
-        //res gowha el products ll front
-        .then(res =>console.log(res))
-        .catch(err =>console.log(err));
-    };
-    function getProduct2(){
-        const dataToSend='laptop';
-        console.log('ana dost mobiles');
-        console.log({dataToSend});
-        axios.post('http://localhost:4111/showproduct', {dataToSend})
-        //res gowha el products ll front
-        .then(res =>console.log(res))
-        .catch(err =>console.log(err));
-    };
+
     // //RES NADOHA FI FRONT FIHA ITEM GOWA EL CART
     // const getCart = async () => {
     //     try {
@@ -111,8 +131,10 @@ const Menu = () => {
                     <li><a onClick={gethistory}>About</a></li>
                     <li><a onClick={getContact}>Contact</a></li>
                     {/* FOFO */}
-                    <li><a onClick={getProduct1}>Mobiles</a></li>
-                    <li><a onClick={getProduct2}>Laptops</a></li> 
+                    {/* <li><a onClick={getProduct1}>Mobiles</a></li> */}
+                    <li><Link to='/mobile' onClick={getProduct1}>Mobiles</Link></li>
+                    <li><Link to='/laptop' onClick={getProduct2}>Laptops</Link></li> 
+                    
                     {/* <li><a onClick={getCart}></a>cart</li> */}
                     <li><Link to='/cart' onClick={getCart} >Cart</Link> </li>
                 </ul>
@@ -123,6 +145,6 @@ const Menu = () => {
         </nav>
     )
 }
-export{getCart}
+export{getCart,getProduct1,getProduct2};
 
 export default Menu

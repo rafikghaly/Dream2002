@@ -4,10 +4,10 @@ import './CategoryBtn.css'
 
 const MobileBtn = (props) => {
     const btn=props.name
-    const photo = require(`../Assets/${btn}.png`);
+    //const photo = require(`../Assets/${btn}.png`);
   return (
     <div className='button'>
-        <img src={photo} alt="" />
+        {/* <img src={photo} alt="" /> */}
         <p>{btn}</p>
     </div>
 
