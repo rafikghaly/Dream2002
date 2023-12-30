@@ -7,9 +7,9 @@ const contactUsController = require('./controllers/contactUsController');
 const historyController = require('./controllers/historyController');
 const bodyParser = require('body-parser');
 const cartController = require('./controllers/cartController');
-const clientProductController = require('./controllers/clientProductController');
 const showproduct =require('./controllers/showproductController');
 const promotions =require('./controllers/HomeController');
+const productinfo =require('./controllers/clientProductController');
 
 app.set('view engine', 'ejs');
 
@@ -43,9 +43,10 @@ app.post('/login',loginController.LoginSignup)
 app.get('/contactUs',contactUsController.ContactUsView)
 //app.use('/showproduct',require('./routes/showproduct'));
 app.post('/showproduct',showproduct.productView);
-app.get('/contactUs',contactUsController.ContactUsView);
+app.post('/contactUs',contactUsController.ContactUsUpdate);
 app.get('/cart',cartController.cartView);
 app.get('/Home',promotions.Home);
+app.post('/productinfo',productinfo.showProductByid);
 
 // Route to show product details by name
 // app.get('/products/:id', clientProductController.showProductByName);

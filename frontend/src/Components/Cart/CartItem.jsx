@@ -10,11 +10,11 @@ export const CartItem = (props) => {
     };
 
     const data = props.data;
-    //const product_img = require(`../Assets/${data.category}/${data.id}.jpg`);
+    const product_img = require(`../Assets/${data.category}/${data.id}.jpg`);
 
     return (
         <div className='item'>
-            {/* <img src={product_img} alt="product image" className="item-image"/> */}
+            { <img src={product_img} alt="product image" className="item-image"/> }
 
             <p className="text">{data.category}</p>
 

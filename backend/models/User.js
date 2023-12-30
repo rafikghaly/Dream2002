@@ -44,7 +44,7 @@ const connection = require('../models/connection.js');
   }
   const getusers=async()=>{
     const[rows]=await pool.query('SELECT * FROM User WHERE is_online = TRUE');
-    console.log(rows);
+    //console.log(rows);
     return rows.length > 0 ? rows : null;
   }
   const getid = async()=>{

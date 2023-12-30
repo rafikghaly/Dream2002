@@ -7,7 +7,7 @@ const connection = require('../models/connection.js');
 const { json } = require('express');
 
 const cartView = async (req, res) => {
-  console.log('cartView');
+  //console.log('cartView');
 
   try {
     // Assuming you have the user ID available in req.user.id after authentication
@@ -50,7 +50,7 @@ const cartView = async (req, res) => {
 };
 
 const addToCart = async (req, res) => {
-  console.log("1111");
+  //console.log("1111");
   try {
     //nzabt el id yegy menan!!!!
     const productId = req.body.productId;
@@ -80,7 +80,7 @@ const addToCart = async (req, res) => {
 const CheckOut = async (req, res) => {
   CartModel.CalPrice();
   his = hisModel.addtohistory();
-  console.log(his);
+  //console.log(his);
 };
 
 module.exports = {

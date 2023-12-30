@@ -3,7 +3,7 @@
 // const app = express();
 const ProductModel = require('../models/Product');
 const prod=(req,res)=>{
-  console.log('gowa el prod');
+  //console.log('gowa el prod');
     res.send('ok');
 };
 
@@ -11,7 +11,7 @@ const productView = async (req, res) => {
   console.log('da5lt el function')
     try {
         const cat = req.body.dataToSend;
-        console.log(cat);
+        //console.log(cat);
         const product = await ProductModel.getProductByCategory(cat);
        // console.log(product);
 

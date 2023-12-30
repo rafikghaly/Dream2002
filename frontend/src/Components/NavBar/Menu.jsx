@@ -7,10 +7,10 @@ import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 
 const getCart = async()=>{
-    console.log('IN THE FUNC');
+    //console.log('IN THE FUNC');
     try {
         const response = await axios.get('http://localhost:4111/cart');
-        console.log('res'+response.data);
+        //console.log('res'+response.data);
         return response.data;
       } catch (error) {
         console.error('Error fetching cart items:', error);
@@ -102,7 +102,7 @@ const Menu = () => {
         <nav>
             <div className="logo-container">
                 <img className='Logo' src={logo} alt='mobilaty logo'/>
-                <a className='Brand' href={'/'}>Mobilaty</a>
+                <a className='Brand' href={'/home'}>Dream2002</a>
             </div>
 
             <div className="links">

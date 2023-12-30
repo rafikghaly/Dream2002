@@ -25,7 +25,6 @@ const Homepage=() =>{
       })
       .then(data => {
         // Work with the retrieved 'data' from the backend
-        console.log(data);
         setData(data);
        
       })
