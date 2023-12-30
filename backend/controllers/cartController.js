@@ -32,18 +32,17 @@ const cartView = async (req, res) => {
         };
       })
     );
-    console.log(cartWithDetails);
-    const resultList = cartWithDetails.map(item => ({
+    //console.log(cartWithDetails);
+    const resultList= cartWithDetails.map(item => ({
       id: item.cartItem.id,
       name: item.productDetails.name,
       price: item.productDetails.price,
       category:item.productDetails.category
     }));
-    console.log(resultList);
+    //console.log(resultList);
     //price ,product name, id product ,category
     
-    res.send(resultList);
-   // res.render('cart', { cart: cartWithDetails });
+    res.send(JSON.stringify(resultList));
   } catch (error) {
     console.error('Error fetching cart:', error);
     res.status(500).send('Internal Server Error');

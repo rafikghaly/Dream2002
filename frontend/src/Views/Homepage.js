@@ -4,7 +4,7 @@ import NavBar from "../Components/NavBar/Menu";
 import Product from "../Components/Product/Product";
 import MobileBtn from "../Components/Button/MobileBtn";
 import './page.css'
-
+import { Link } from 'react-router-dom';
 
 const Homepage=() =>{
     var phone1={
