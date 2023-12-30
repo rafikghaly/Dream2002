@@ -8,7 +8,7 @@ const prod=(req,res)=>{
 };
 
 const productView = async (req, res) => {
-  console.log('da5lt el function')
+  //console.log('da5lt el function')
     try {
         const cat = req.body.dataToSend;
         //console.log(cat);
