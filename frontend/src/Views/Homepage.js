@@ -4,38 +4,27 @@ import NavBar from "../Components/NavBar/Menu";
 import Product from "../Components/Product/Product";
 import MobileBtn from "../Components/Button/MobileBtn";
 import './page.css'
-import { Link } from 'react-router-dom';
-import axios from 'axios'
-
-
 
 const Homepage=() =>{
-      // const dataToSend='laptop';
-      //console.log('ana hommeeee');
-      //console.log({dataToSend});
       const [items_list, setData] = useState([]);
- 
-     
-      fetch('http://localhost:4111/Home')
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok.');
+      
+      const fetchData = async () => {
+        try {
+          const response = await fetch('http://localhost:4111/Home');
+          if (!response.ok) {
+            throw new Error('Network response was not ok.');
+          }
+          const data = await response.json();
+          setData(data);
+        } catch (error) {
+          console.error('Fetch error:', error);
         }
-        return response.json(); // Parse JSON data
-      })
-      .then(data => {
-        // Work with the retrieved 'data' from the backend
-        setData(data);
-       
-      })
-      .catch(error => {
-        // Handle any errors that occurred during the fetch
-        console.error('Fetch error:', error);
-      });
-     
-      //console.log(data[0]);
-    
-
+      };
+      
+      useEffect(() => {
+        fetchData();
+      }, []);
+      
     return(
             <div>
              <NavBar/>
@@ -48,28 +37,16 @@ const Homepage=() =>{
                       <MobileBtn name="mobile"/>
 
                   </div>
-                    <div>
-                        <img className="sale" src={sale} alt='Sale'/>
-                    </div>
-                    <div className='row'>
-                    { items_list.length===0 ?   (  <p>Nol Products.</p>                                     
-                       )    
-                                                :                                
-                    (items_list.map((item) => (  <Product data={item}/>                    
-                     )))   
+                  <div>
+                    <img className="sale" src={sale} alt='Sale'/>
+                  </div>
+                  <div className='row'>
+                    { items_list.length===0 ?
+                    (<p>No Products.</p>)    :   (items_list.map((item) => (  <Product data={item}/>  )))   
                   } 
                   </div> 
-
-
-
-
-
-
-
                 </div>
-
             </div>
     );
-
-    }
+}
 export default Homepage

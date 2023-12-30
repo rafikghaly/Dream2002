@@ -1,10 +1,10 @@
 import React, {useState} from "react";
 import NavBar from "../Components/NavBar/Menu";
 import {useParams} from "react-router-dom";
-
+import axios from 'axios'
 import './ProductInfo.css'
 import './page.css'
-import axios from 'axios'
+
 
 const ProductInfo =() =>{
 
@@ -12,8 +12,18 @@ const ProductInfo =() =>{
     const [item, setData] = useState("");
     const [product_image, setImage] = useState("");
 
-    axios.post('http://localhost:4111/productinfo',{p_id})
+    function addToCartHandle(event){
+        event.preventDefault();
+        axios.post('http://localhost:4111/cart',{p_id})
+        .then(res => {
+            if (res.data === 'Product added to the cart successfully'){
+                alert("Added to Cart")
+            }
+        })
+        .catch(err =>console.log(err));
+      }
 
+    axios.post('http://localhost:4111/productInfo',{p_id})
     .then(res => {
     if (res.data === 'Product not found'){
     alert("product not found")
@@ -25,7 +35,6 @@ const ProductInfo =() =>{
     }
     })
     .catch(err =>console.log(err));
-    console.log(item);
     
 
     return(
@@ -80,8 +89,11 @@ const ProductInfo =() =>{
                         </tr>
                     </table>
 
-                    {/*fe hob el rafik rafik rafik el raqiq*/}
-                    <button className="add">Add to cart</button>
+                    <form onSubmit={addToCartHandle}>
+                        <button type="submit" className="add">
+                            Add to cart
+                        </button>
+                    </form>
                 </div>
 
             </div>

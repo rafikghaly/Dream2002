@@ -1,7 +1,6 @@
 import React from 'react'
 import trash_icon from '../Assets/trash-bin.png'
 import './Cart.css'
-import axios from 'axios'
 
 export const CartItem = (props) => {
     const handleDeleteClick = () => {

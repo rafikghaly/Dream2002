@@ -45,8 +45,9 @@ app.get('/contactUs',contactUsController.ContactUsView)
 app.post('/showproduct',showproduct.productView);
 app.post('/contactUs',contactUsController.ContactUsUpdate);
 app.get('/cart',cartController.cartView);
+app.post('/cart',cartController.addToCart)
 app.get('/Home',promotions.Home);
-app.post('/productinfo',productinfo.showProductByid);
+app.post('/productInfo',productinfo.showProductByid);
 
 // Route to show product details by name
 // app.get('/products/:id', clientProductController.showProductByName);
