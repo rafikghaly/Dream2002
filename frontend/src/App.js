@@ -7,6 +7,7 @@ import About from "./Views/About"
 import Mobiles from "./Views/Mobiles"
 import Laptops from "./Views/Laptops"
 import Cart from "./Views/Cart"
+import User_info from "./Views/User_info";
 import React from "react";
 import ProductInfo from "./Views/ProductInfo";
 
@@ -16,6 +17,7 @@ function App() {
 
     return (
         <div>
+
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<Startpage/>}></Route>
@@ -26,6 +28,7 @@ function App() {
                     <Route path="/laptop" element={<Laptops/>}></Route>
                     <Route path="/cart" element={<Cart/>}></Route>
                     <Route path="/product/:p_id" element={<ProductInfo/>}></Route>
+                    <Route path="/user_info" element={<User_info/>}></Route>
                 </Routes>
             </BrowserRouter>
 
