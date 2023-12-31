@@ -2,10 +2,14 @@ const userModel = require('../models/User');
 
 //to be tested
 const logout = async (req, res) => {
-  if (req.body.action == "logout") {
-    userModel.logoutt(userModel.getemail());
-    res.send("ok2");
-  }
+    try{
+        userModel.logoutt();
+        res.send("ok2");
+    }
+    catch (error) {
+        console.error('Error logging out:', error);
+        res.status(500).send('Internal Server Error: ' + error.message);
+    }
 }
  
 const LoginSignup = async (req, res) => {
