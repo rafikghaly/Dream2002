@@ -15,6 +15,8 @@ export const AddProduct = () => {
         event.preventDefault();
         axios.post('http://localhost:4111/adminAddProduct',{ name, price, category, description, brand, year, color})
         .then(res => {
+            console.log("ana submit")
+            console.log(res.data);
             if (res.data === 'Product Added'){
                 alert('Product Added!');
             }
@@ -24,6 +26,10 @@ export const AddProduct = () => {
         })
         .catch(err =>console.log(err));
       }
+
+    function selectCategory(event){
+        setCategory(event.target.value);
+    }
 
     const handleFileChange = (e) => {
         setFile(e.target.files[0]);
@@ -49,7 +55,6 @@ export const AddProduct = () => {
             console.error('Error:', error);
         }
     };
-
 
     return (
         <div>
@@ -100,9 +105,11 @@ export const AddProduct = () => {
                 <div className="add-product-input">
                     <label htmlFor="categories">Choose a category: </label>
                     <select id="categories" name="cars" required
-                     onChange = {e=>setCategory(e.target.value)}>
-                        <option value="mobile">Mobile</option>
-                        <option value="laptop">Laptop</option>
+                     onChange = {selectCategory}>
+                        <option disabled></option>
+                        <option value="mobiles">Mobile</option>
+                        <option value="laptops">Laptop</option>
+                        <option value="televisions">Televisions</option>
                     </select>
                 </div>
 

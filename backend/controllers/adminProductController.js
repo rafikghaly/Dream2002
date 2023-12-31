@@ -12,41 +12,31 @@ const removeProductView = (req, res) => {
 }
 
 // For Adding Product
-const addProduct = (req, res) => {
-    const { name, price, category, description, brand, year, color} = req.body;
-  
-    // Check for empty fields
-    if (!name || !price || !category || !description || !brand || !year || !color) {
-     // console.log("Fill empty fields");
-    } else {
-      // Validation
-      results = ProductModel.getProductByName(name);
-        if (results.length > 0) {
-          console.log("Product with the same name exists");
-          res.send("Product with the same name exists")
-        } else {
-          // Insert the product into the database
-          ProductModel.insertProduct(name,price,brand,description,category,color,year);
-          res.send("Product Added")
-            }
+const addProduct = async (req, res) => {
+  const { name, price, category, description, brand, year, color} = req.body;
+  results = await ProductModel.getProductByName(name);
+  if (results == null) {
+    ProductModel.insertProduct(name,price,brand,description,category,color,year);
+    res.send("Product Added")
+  } 
+  else {
+    res.send("Product with the same name exists")
+  }
+};
 
-        }
+const removeProduct = (req,res) => {
+  const id = req.body;
+  results = ProductModel.getProductByName(id);
+    if (results.length > 0) {
+      console.log("Product  exists");
+      ProductModel.removeProduct(id);
+      console.log("Product  removed");
+    } 
+  };
 
-    };
-
-    const removeProduct = (req,res) => {
-      const id = req.body;
-        results = ProductModel.getProductByName(id);
-          if (results.length > 0) {
-            console.log("Product  exists");
-            ProductModel.removeProduct(id);
-            console.log("Product  removed");
-          } 
-      };
-
-  module.exports =  {
-    addProductView,
-    removeProductView,
-    addProduct,
-    removeProduct
+module.exports =  {
+  addProductView,
+  removeProductView,
+  addProduct,
+  removeProduct
 };

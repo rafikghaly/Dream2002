@@ -30,7 +30,7 @@ const getProductByCategory = async(cat) =>{
   return rows.length > 0 ? rows : null;
 };
 const insertProduct = async(name, price,brand,description,category,color,year)=>{
-  await pool.query('INSERT INTO Product SET ?', { name, price, brand, description, category, color, year });
+  await pool.query('INSERT INTO Product SET ?', {name: name,price: price,brand: brand,description: description,category: category,color: color,year: year });
 };
 const removeProduct = async(id)=>{
   await pool.query('DELETE FROM Product WHERE id = ?', {id});

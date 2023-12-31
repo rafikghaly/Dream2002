@@ -14,7 +14,6 @@ const ClientinfoView = async (req, res) => {
 }
 
 const clientupdate = async (req, res) => {
-    //console.log("fok el dee2a");
     const { name, email } = req.body;
     try{
         if(name.length>0 && email.length>0){
