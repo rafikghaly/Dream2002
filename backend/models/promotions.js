@@ -21,7 +21,7 @@ console.log('Product table created successfully.');
 
 
 const getHome =async()=>{
-    const [rows] = await pool.query(`SELECT Product.* FROM Product LEFT JOIN Promotions ON Product.id = Promotions.pid WHERE Product.id <= 2; `);
+    const [rows] = await pool.query(`SELECT Product.* FROM Product LEFT JOIN Promotions ON Product.id = Promotions.pid WHERE Product.id <= 2`);
 
    // console.log(rows[0][0]);
     return rows;

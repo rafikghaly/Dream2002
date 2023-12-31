@@ -1,4 +1,3 @@
-const connection = require('../models/connection.js');
 const mysql = require('mysql2/promise');
 
 const pool = mysql.createPool({
@@ -50,20 +49,3 @@ module.exports = {
   removeProduct,
   getProductPrice
 };
-
-// const createProductTable = `CREATE TABLE IF NOT EXISTS Product (
-//     id INT AUTO_INCREMENT,
-//     name VARCHAR(255) NOT NULL,
-//     brand VARCHAR(255) NOT NULL,
-//     description VARCHAR(255) NOT NULL,
-//     color VARCHAR(255) DEFAULT 'Black',
-//     year YEAR NOT NULL,
-//     category VARCHAR(255) NOT NULL,
-//     price INT NOT NULL,
-//     PRIMARY KEY(id)
-//   )`;
-
-// connection.query(createProductTable, (err, results, fields) => {
-//     if (err) throw err;
-//     console.log('User table created successfully.');
-// });

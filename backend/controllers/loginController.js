@@ -55,7 +55,6 @@ const LoginSignup = async (req, res) => {
             const results = await userModel.validate(email);
             if (results.length > 0 && email == results[0].email) {
                 const results1 = await userModel.checkPass(email);
-                console.log(results1);
                 if (results1.length > 0 && password == results1[0].password) {
                     userModel.update(email);
                     res.send("correct password");

@@ -1,11 +1,9 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const router = express.Router();
 const loginController = require('./controllers/loginController');
 const contactUsController = require('./controllers/contactUsController');
 const historyController = require('./controllers/historyController');
-const bodyParser = require('body-parser');
 const cartController = require('./controllers/cartController');
 const showproduct =require('./controllers/showproductController');
 const promotions =require('./controllers/HomeController');
@@ -16,7 +14,6 @@ const category =require('./controllers/categoryController');
 
 app.set('view engine', 'ejs');
 
-// Use bodyParser middleware to parse JSON and URL-encoded bodies
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -53,6 +50,7 @@ app.post('/cartadd',cartController.addToCart)
 app.post('/cartremove',cartController.removeFromCart)
 app.get('/Home',promotions.Home);
 app.post('/productInfo',productinfo.showProductByid);
+app.post('/submitFeedback',productinfo.addProductFeedback)
 app.get('/user_info',clientinfo.ClientinfoView);
 app.post('/user_info',clientinfo.clientupdate);
 app.post('/adminAddProduct',adminControl.addProduct);
