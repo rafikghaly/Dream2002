@@ -10,7 +10,7 @@ const showProductByid = async (req, res) => {
     if (!product) {
       res.send('Product not found');
     } else {
-      res.send( product );
+      res.send(product);
     }
   } 
   catch (error) {

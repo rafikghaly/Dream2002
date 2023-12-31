@@ -12,14 +12,14 @@ const History = () => {
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const response = await gethistory(); // Replace with your actual API endpoint
+          const response = await gethistory();
           setItemsList(response);
         } catch (error) {
           console.error('Error fetching history value:', error);
         }
       };
   
-      fetchData(); //important: Run for one time only
+      fetchData(); //important: Run for one time only --m7adesh y7ot parameterssss
     }, []);
  
    

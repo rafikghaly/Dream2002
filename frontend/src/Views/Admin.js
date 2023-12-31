@@ -15,7 +15,7 @@ const Admin =() =>{
     // This belongs to frontend --- dont touch
     const [action, setAction] = useState("add_product");
 
-    // Remove this ya nas yally wara
+    //this is the list ya nas yally wara
     let items_list = [
         {
             id:1,
@@ -63,7 +63,7 @@ const Admin =() =>{
     }]
 
 
-    // These belong to frontend --- Don't touch
+    // These belong to frontend --- Don't touch,Pleaaaase
     let componentToRender;
 
     if (action === "add_product") {

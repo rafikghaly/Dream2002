@@ -17,7 +17,7 @@ app.set('view engine', 'ejs');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
-
+//Zawedo wa7da wa7da
 app.post('/login',loginController.LoginSignup)
 app.get('/login',loginController.logout)
 app.get('/contactUs',contactUsController.ContactUsView)

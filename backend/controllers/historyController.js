@@ -5,18 +5,16 @@ const ProductModel = require('../models/Product');
 
 const showhistory = async (req, res) => {
   try {
-    // Assuming you have the user ID available in req.user.id after authentication
+    // Hat el model el awel
     const userId = await userModel.getid();
-    // Get the cart items for the user
+    // hat el list
     const cartItems = await historyModel.getproduct(userId[0]['id']);
-    // Fetch product details for each item in the cart
+    // hat el product details
     const cartWithDetails = await Promise.all(
-      cartItems.map(async (cartItem) => {
-        // Assuming each cart item has a productId property
-        const productId = cartItem.productId;
-        // Fetch the product details from the ProductModel based on the productId
-        const productDetails = await ProductModel.getProductByName(productId)
-        return {
+    cartItems.map(async (cartItem) => {
+    const productId = cartItem.productId;
+    const productDetails = await ProductModel.getProductByName(productId)
+    return {
           cartItem,
           productDetails,
         };

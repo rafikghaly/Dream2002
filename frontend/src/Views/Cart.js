@@ -22,14 +22,14 @@ const Cart = () => {
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const response = await getCart(); // Replace with your actual API endpoint
+          const response = await getCart(); 
           setItemsList(response);
         } catch (error) {
           console.error('Error fetching cart value:', error);
         }
       };
   
-      fetchData(); //important: Run for one time only
+      fetchData(); //important: Run for one time only 3lashan my3mlsh submit kaza marra + m7adesh y7ot parameters
     }, []);
  
     const [setShowImage] = useState(true);
