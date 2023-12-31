@@ -7,7 +7,7 @@ import cart from '../Assets/cart.png'
 const Product = (props) => {
 
     const data = props.data;
-    //const photo = require(`../Assets/${data.category}/${data.id}.jpg`);
+    const photo = require(`../Assets/${data.category}/${data.id}.jpg`);
 
     function gotoInfo (id) {
         window.location.href = `/product/${id}`;
@@ -22,7 +22,7 @@ const Product = (props) => {
         <div  onClick={()=>gotoInfo(data.id)}>
             {/* Image and description text */}
             <div className="product-image">
-                {/* <img src={photo} alt="" /> */}
+                { <img src={photo} alt="" /> }
                 <div className="description">
                     <p> {data.description} </p>
                 </div>

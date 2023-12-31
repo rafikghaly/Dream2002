@@ -7,7 +7,6 @@ import User_info from "../../Views/User_info";
 import cart_icon from '../Assets/nav_cart.png'
 import axios from 'axios'
 import { Link } from 'react-router-dom';
-import React, { useState, useEffect } from 'react';
 
 const getCart = async()=>{
     //console.log('IN THE FUNC');
