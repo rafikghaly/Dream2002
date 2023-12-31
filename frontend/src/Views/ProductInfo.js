@@ -11,30 +11,43 @@ const ProductInfo =() =>{
     const {p_id} = useParams();
     const [item, setData] = useState("");
     const [product_image, setImage] = useState("");
+    const [feedback, setFeedback] = useState("");
 
-    function addToCartHandle(event){
+    function addToCartHandle(event) {
         event.preventDefault();
-        axios.post('http://localhost:4111/cartadd',{p_id})
-        .then(res => {
-            if (res.data === 'Product added to the cart successfully'){
-                alert("Added to Cart")
-            }
+        axios.post("http://localhost:4111/cartadd", { p_id })
+        .then((res) => {
+          if (res.data === "Product added to the cart successfully") {
+            alert("Added to Cart");
+          }
         })
-        .catch(err =>console.log(err));
+        .catch(err => console.log(err));
       }
-
-    axios.post('http://localhost:4111/productInfo',{p_id})
-    .then(res => {
-    if (res.data === 'Product not found'){
-    alert("product not found")
-    }
-    else {
-    setData(res.data)
-    const product_image = require(`../Components/Assets/${item.category}/${p_id}.jpg`);
-    setImage(product_image)
-    }
+    
+      function submitFeedback(event) {
+        event.preventDefault();
+        axios.post("http://localhost:4111/submitFeedback", { p_id, feedback })
+          .then((res) => {
+            if (res.data === "Feedback sent") {
+              alert("Feedback submitted successfully");
+            }
+          })
+          .catch((err) => console.log(err));
+      };
+    
+    axios.post("http://localhost:4111/productInfo", { p_id })
+    .then((res) => {
+        if (res.data === "Product not found") {
+        alert("product not found");
+        } else {
+        setData(res.data);
+        const product_image = require(
+            `../Components/Assets/${item.category}/${p_id}.jpg`
+        );
+        setImage(product_image);
+        }
     })
-    .catch(err =>console.log(err));
+    .catch((err) => console.log(err));
     
 
     return(
@@ -94,8 +107,21 @@ const ProductInfo =() =>{
                             Add to cart
                         </button>
                     </form>
-                </div>
 
+                    <form onSubmit={submitFeedback}>
+                        <label htmlFor="feedback">Feedback:</label>
+                        <textarea
+                        id="feedback"
+                        name="feedback"
+                        rows="4"
+                        cols="50"
+                        value={feedback} required
+                        onChange={(e) => setFeedback(e.target.value)}
+                        />
+                        <br />
+                        <button type="submit">Submit Feedback</button>
+                    </form>
+                </div>
             </div>
         </div>
     );
