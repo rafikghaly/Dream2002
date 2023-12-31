@@ -1,6 +1,9 @@
-//import React from 'react'
+import React from 'react'
 import './Menu.css'
 import logo from '../Assets/logo.gif'
+import user_icon from '../Assets/user_nav.png'
+import { memo, useEffect, useState } from "react";
+import User_info from "../../Views/User_info";
 import cart_icon from '../Assets/nav_cart.png'
 import axios from 'axios'
 import { Link } from 'react-router-dom';
@@ -123,9 +126,16 @@ const Menu = () => {
                 <img className='Logo' src={logo} alt='mobilaty logo'/>
                 <a className='Brand' href={'/home'}>Dream2002</a>
             </div>
+            <div className="logo2-container">
+                <img src={user_icon}/>
+                <ul className="subnav">
+                    <li ><button className="btui">Logout</button></li><hr/>
+                    <li className="ui2"><a href={'/user_info'}>User Info</a></li>
+                </ul>
+
+            </div>
 
             <div className="links">
-                
                 <ul>
                     <li><a onClick={gethistory}>About</a></li>
                     <li><a onClick={getContact}>Contact</a></li>

@@ -56,8 +56,66 @@ nav ul li a{
 nav ul li a:hover{
     background: #212467;
 }
+.nav_button{
+    background: transparent;
+    border-collapse: collapse;
+    width: 20px;
+    height: 40px;
+    margin-left: 40px;
 
-.cart-icon{
+}
 
-    margin-left: 100%;
+.subnav{
+     display: none;
+    list-style-type: none;
+    height: 80px;
+    align-content: center;
+    position: relative;
+    margin-top: 0px;
+    text-align: Left;
+    border-width:2px ;
+    border-style: ridge;
+    border-radius: 10px;
+    background: #02052F;
+    padding-right: 35px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+
+
+
+}
+.logo2-container:hover > .subnav{
+    display:block;
+    animation: slideUp .2s ease;
+    position: absolute;
+}
+.ui{
+
+    color: white;
+    background-color: #02052F;
+}
+.ui2{
+    color: white;
+    margin-left: -14px;
+    font-size: medium;
+}
+@keyframes slideUp{
+    0%{
+        opacity:0;
+        transform: translateY(-100px);
+    }
+    100%{
+        opacity:1;
+        transform:none;
+    }
+}
+.btui{
+    background-color: #02052F;
+    color:white;
+    border-collapse: collapse;
+    border: none;
+    font-size: medium;
+}
+ .ui2 :hover{
+    background-color: transparent;
 }
