@@ -60,6 +60,15 @@ export const AddProduct = () => {
                     <input id={'color'} type="text" required/>
                 </div>
 
+
+
+                {/*The price of the product*/}
+                {/*the maximum price is 1000000 34an feh t3wim we keda*/}
+                <div className="add-product-input">
+                    <label htmlFor="price">Year Released: </label>
+                    <input id={'price'} type="number" min={10} max={1000000} required/>
+                </div>
+
                 {/*The category of the product */}
                 {/*-------- This shall be edited to add categories from the database*/}
                 <div className="add-product-input">
@@ -68,13 +77,6 @@ export const AddProduct = () => {
                         <option value="mobile">Mobile</option>
                         <option value="laptop">Laptop</option>
                     </select>
-                </div>
-
-                {/*The price of the product*/}
-                {/*the maximum price is 1000000 34an feh t3wim we keda*/}
-                <div className="add-product-input">
-                    <label htmlFor="price">Year Released: </label>
-                    <input id={'price'} type="number" min={10} max={1000000} required/>
                 </div>
 
                 {/*The description of the product*/}

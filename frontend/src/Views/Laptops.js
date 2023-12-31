@@ -1,47 +1,66 @@
-import React, {useState ,  useEffect } from "react";
+import React from "react";
 import NavBar from "../Components/NavBar/Menu";
 import Product from "../Components/Product/Product";
-import {getProduct2} from "../Components/NavBar/Menu";
-import empty_cart from '../Components/Assets/empty_cart.png';
+import laptop from '../Components/Assets/laptop-banner.jpg'
+
 const Laptops =() =>{
 
-    const [items_list, setItemsList] = useState([]);
-  
-    useEffect(() => {
-      const fetchData = async () => {
-        try {
-          const response = await getProduct2(); // Replace with your actual API endpoint
-          setItemsList(response);
-          console.log(response);
-        } catch (error) {
-          console.error('Error fetching laptop value:', error);
+    // ya beto3 el back 4elo dah we badeloh bel code beta3ko
+    let items_list = [
+        {
+            id:1,
+            name:'Iphone 13 Pro Max',
+            brand:'Apple',
+            description:'Iphones are the longest lasting devices',
+            color:'black',
+            year:2023,
+            category:'mobiles',
+            price:56999,
+            quantity: 50
+        },
+        {
+            id:2,
+            name:'Galaxy s21 Ultra',
+            brand:'Samsung',
+            description: 'Galaxy devices are weaker than iphones',
+            color:'black',
+            year:2023,
+            category:'mobiles',
+            price: 30000,
+            quantity: 61
+        },
+        {
+            id:3,
+            name:'Iphone 8 Plus',
+            brand:'Apple',
+            description: 'It was great back in the day',
+            color:'black',
+            year:2018,
+            category:'mobiles',
+            price: 7500,
+            quantity: 24
         }
-      };
-  
-      fetchData(); //important: Run for one time only
-    }, []);
+    ]
 
     return(
         <div>
             <NavBar/>
-            {/* <MobileBtn/> */}
-           <div>
-            {
-                    items_list.length===0 ?
+            <img className={'sale'} src={laptop} alt=""/>
+            <div className="row">
+                {
+                    items_list.length === 0 ?
                         (
                             <div className='col'>
-                                <img className='empty_cart_img' src={empty_cart} alt="empty cart image"/>
-                                <p className='empty_cart_msg'>Looks like you haven't added anything to your cart. <br/>Go ahead & explore top categories.</p>
+                                <p>No Products.</p>
                             </div>
                         )
                         :
                         (items_list.map((item) => (
                             <Product data={item}/>
-                    )))
- 
-            }
+                        )))
+
+                }
             </div>
-            {/*<h1>This is laptop page</h1>*/}
         </div>
     );
 

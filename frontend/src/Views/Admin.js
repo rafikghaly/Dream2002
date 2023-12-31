@@ -65,8 +65,8 @@ const Admin =() =>{
             componentToRender = <div>Your inventory is empty!</div>
         } else {
             componentToRender = (items_list.map((item) => (
+
                 <div className={'admin-item-slot'}>
-                    <img src={`../Components/Assets/${item.category}/${item.id}.jpg`} alt="product image"/>
                     <p>Category: {item.category}</p>
                     <p>Name: {item.name}</p>
                     <p>Quantity: {item.quantity}</p>
@@ -80,7 +80,9 @@ const Admin =() =>{
 
     return (
         <div>
-            <h1 className="admin-title">Adminstrator Page</h1>
+            <div className="admin-title-background">
+                <h1 className="admin-title">Adminstrator Page</h1>
+            </div>
             {/*<NavBar/>*/}
             <div className="admin-buttons">
                 <button onClick={()=>{setAction("add_product")}}><img src={add_icon} alt=""/></button>

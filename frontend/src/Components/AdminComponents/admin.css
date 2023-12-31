@@ -5,12 +5,14 @@
 }
 
 .admin-comp{
+    border: 1px solid black;
     background: #d7e1e7;
     padding: 30px;
     width: 80%;
     align-items: center;
     margin-left: 50px;
     border-radius: 10px;
+    margin-bottom: 50px;
 }
 
 .admin-buttons{
@@ -56,7 +58,7 @@
 .add-product-input{
     display: flex;
     align-items: center;
-    margin: 10px;
+    margin: 15px;
 }
 
 .add-product-input label{
@@ -80,7 +82,7 @@
     margin: 0;
     margin-top: 30px;
     align-self: center;
-    background: #d7e0e8;
+    background: white;
     cursor: pointer;
 }
 
@@ -93,6 +95,17 @@
     background: white;
     width: 90%;
     border: 1px solid black;
+}
+
+.admin-title-background{
+    height: 250px;
+    background: url("../Assets/admin-background.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 50px;
 }
 
 .admin-title{
@@ -114,5 +127,4 @@
     background: #5389d5;
     color: white;
 }
-
 

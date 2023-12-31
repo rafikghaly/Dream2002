@@ -10,15 +10,20 @@
     height: 50px;
     background: #e7e7ee;
     align-items: center;
+
+    transform: scale(1);
+    transition: transform 0.3s ease;
 }
 
 .cart-item:hover{
+    transform: scale(1.05);
     background: #d2d2d9;
 }
 
 .item-image{
     height: 50px;
     width: 50px;
+    border-radius: 50px;
 }
 
 .name-id{

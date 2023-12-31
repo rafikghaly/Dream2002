@@ -86,18 +86,7 @@
     text-align: justify-all;
     font-size: 20px;
 }
-.edit{
-    width: 100px;
-    height: 40px;
-    background: #02052f;
-    border-radius: 6px;
-    color: white;
-    font-size: medium;
-    margin-left: 320px;
-    margin-bottom: 5px;
-    padding-left: 25px;
-    padding-right: 25px;
-}
+
 hr{
     width: 200px;
     height: 5px;
@@ -115,16 +104,29 @@ hr{
     height: 500px;
     border-radius:50px;
 }
-.info{
-    display:flex;
-    background: rgb(234, 234, 238);
+
+.Homepage-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     margin-left: -10px;
     border-radius: 6px;
     width: 380px;
     height: 65px;
 }
-.he{
-    margin-left: 210px;
-    margin-bottom: 20px;
+
+.main-logo{
+    width: 300px;
+    height: auto;
+    margin: 25px;
+}
+
+.contact-us-img{
+    background: url('../Components/Assets/customer service.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 700px;
+    height: 700px;
+    border-radius: 50px;
 }

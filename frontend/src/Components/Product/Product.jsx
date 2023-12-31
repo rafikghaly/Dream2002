@@ -22,7 +22,7 @@ const Product = (props) => {
         <div  onClick={()=>gotoInfo(data.id)}>
             {/* Image and description text */}
             <div className="product-image">
-                { <img src={photo} alt="" /> }
+                <img src={photo} alt="" />
                 <div className="description">
                     <p> {data.description} </p>
                 </div>
@@ -38,14 +38,7 @@ const Product = (props) => {
         </div>
 
         {/*Buttons */}
-        <div className="buttons">
-            <div className="icon">
-                <img src={love} alt="" />
-            </div>
-            <div className="icon" onClick={()=>goToCart()}>
-                <img src={cart} alt="" />
-            </div>
-        </div>
+        <button className={'product-card-button'} onClick={()=>goToCart()}>Add to cart</button>
     </div>
   )
 }
