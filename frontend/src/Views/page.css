@@ -4,6 +4,13 @@
     align-items: center;
     margin: 100px 100px;
 }
+.productRow{
+    display:flex;
+    flex-wrap: wrap;
+    align-self: center;
+    align-items: center;
+    margin: 100px 100px;
+}
 .sale{
     width: 100%;
     height: 100%;

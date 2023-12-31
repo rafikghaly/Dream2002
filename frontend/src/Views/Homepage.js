@@ -31,7 +31,7 @@ const Homepage=() =>{
                   <div>
                     <img className="sale" src={sale} alt='Sale'/>
                   </div>
-                  <div className='row'>
+                  <div className='productRow'>
                     { items_list.length===0 ?
                     (<p>No Products.</p>)    :   (items_list.map((item) => (  <Product data={item}/>  )))   
                   } 

@@ -51,11 +51,11 @@ const connection = require('../models/connection.js');
     const [rows]= await pool.query('SELECT id FROM User WHERE is_online = TRUE');
     return rows.length > 0 ? rows : null;
   }
-  const updatename =async(name,id)=>{
-  await pool.query('UPDATE User SET name =?  WHERE is_online = TRUE AND id=?',[name,id])
+  const updatename =async(name)=>{
+  await pool.query('UPDATE User SET name =?  WHERE is_online = TRUE',[name])
   }
-  const updateemail=async(email,id)=>{
-    await pool.query('UPDATE User SET email =?  WHERE is_online = TRUE AND id=?',[email,id])
+  const updateemail=async(email)=>{
+    await pool.query('UPDATE User SET email =?  WHERE is_online = TRUE',[email])
   }
   const updatelocation =async(location,id)=>{
     await pool.query('UPDATE User SET location =?  WHERE is_online = TRUE AND id=?',[location,id])

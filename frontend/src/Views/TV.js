@@ -26,7 +26,7 @@ const TV =() =>{
         <div>
             <NavBar/>
             <img className={'sale'} src={tv} alt=""/>
-            <div className="row">
+            <div className="productRow">
                 {
                     items_list.length === 0 ?
                         (

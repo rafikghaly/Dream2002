@@ -25,7 +25,7 @@ const Laptops =() =>{
         <div>
             <NavBar/>
             <img className={'sale'} src={laptop} alt=""/>
-            <div className="row">
+            <div className="productRow">
                 {
                     items_list.length === 0 ?
                         (

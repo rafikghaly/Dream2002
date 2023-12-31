@@ -26,7 +26,7 @@ const Mobiles =() =>{
         <div>
             <NavBar/>
             <img className={'sale'} src={mobile} alt=""/>
-            <div className="row">
+            <div className="productRow">
                 {
                     items_list.length === 0 ?
                         (

@@ -3,32 +3,25 @@ const connection = require("../models/connection.js");
 const app = express();
 const userModel = require('../models/User');
 
-const ClientinfoView = (req, res) => {
-    //console.log("yaraaaaaab");
-    results= userModel.getusers(); 
-        if(results){
-            console.log(results);
-            res.send(results);
-        }
-        else{
-            console.log('error');
-        }
-         
-   
+const ClientinfoView = async (req, res) => {
+    results= await userModel.getusers(); 
+    if(results){
+        res.send(results);
+    }
+    else{
+        console.log('error');
+    }  
 }
 
-const clientupdate = (req, res) => {
+const clientupdate = async (req, res) => {
     //console.log("fok el dee2a");
     const { name, email } = req.body;
-    results=userModel.getid();
-    try{    
-    if(name.length>0){
-            userModel.updatename(name,results[0].id)
+    try{
+        if(name.length>0 && email.length>0){
+            await userModel.updatename(name)
+            await userModel.updateemail(email)  
+            res.send("User Modified");
         }
-        if(email.length>0){
-            userModel.updateemail(email,results[0].id)
-        }
-        res.send("User Modified");
     }
     catch(error){
         res.send("error");
