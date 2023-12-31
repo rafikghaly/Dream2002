@@ -125,3 +125,6 @@ nav ul li a:hover{
  
     margin-left: 100%;
 }
+a{
+cursor: pointer;
+}
