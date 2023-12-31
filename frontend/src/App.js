@@ -10,6 +10,9 @@ import Cart from "./Views/Cart"
 import User_info from "./Views/User_info";
 import React from "react";
 import ProductInfo from "./Views/ProductInfo";
+import Admin from "./Views/Admin";
+import {Footer} from "./Components/Footer/Footer";
+import TV from "./Views/TV";
 
 
 
@@ -17,7 +20,6 @@ function App() {
 
     return (
         <div>
-
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<Startpage/>}></Route>
@@ -27,11 +29,13 @@ function App() {
                     <Route path="/mobile" element={<Mobiles/>}></Route>
                     <Route path="/laptop" element={<Laptops/>}></Route>
                     <Route path="/cart" element={<Cart/>}></Route>
+                    <Route path="/admin" element={<Admin/>}></Route>
+                    <Route path="/tv" element={<TV/>}></Route>
                     <Route path="/product/:p_id" element={<ProductInfo/>}></Route>
                     <Route path="/user_info" element={<User_info/>}></Route>
                 </Routes>
             </BrowserRouter>
-
+            <Footer/>
         </div>
     );
 }

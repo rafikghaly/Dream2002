@@ -5,11 +5,10 @@ const Contact =() =>{
     return(
         <div>
             <NavBar/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <ContactUs/>
+            <div className="row">
+                <ContactUs/>
+                <div className="contact-us-img"></div>
+            </div>
 
         </div>
     );

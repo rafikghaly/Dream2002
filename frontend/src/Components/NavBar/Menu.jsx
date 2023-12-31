@@ -142,9 +142,10 @@ const Menu = () => {
                     {/* <li><a onClick={getProduct1}>Mobiles</a></li> */}
                     <li><Link to='/mobile' onClick={getProduct1}>Mobiles</Link></li>
                     <li><Link to='/laptop' onClick={getProduct2}>Laptops</Link></li> 
-                    
+                    <li><a href={'/tv'}>TV</a></li> 
                     {/* <li><a onClick={getCart}></a>cart</li> */}
                     <li><Link to='/cart' onClick={getCart} >Cart</Link> </li>
+                    <li><a href={'/tv'}>TV</a></li>
                 </ul>
             </div>
 
