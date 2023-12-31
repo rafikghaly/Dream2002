@@ -34,6 +34,8 @@ app.get('/user_info',clientinfo.ClientinfoView);
 app.post('/user_info',clientinfo.clientupdate);
 app.post('/adminAddProduct',adminControl.addProduct);
 app.post('/addCategory',category.addCategory);
+app.get('/history',historyController.showhistory);
+
 
 const PORT = process.env.PORT || 4111;
 app.listen(PORT, () => {

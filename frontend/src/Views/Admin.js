@@ -52,7 +52,16 @@ const Admin =() =>{
         }
     ]
 
-    
+    let feedback_list = [{
+        name:'Rafik Ghaly',
+        email:'rafik@gmail.com',
+        feedback:'Good products with great quality'
+    }, {
+        name:'Farah Zayed',
+        email:'farah@gmail.com',
+        feedback:'Great Website'
+    }]
+
 
     // These belong to frontend --- Don't touch
     let componentToRender;

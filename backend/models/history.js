@@ -31,10 +31,7 @@ const createHistoryTable = `CREATE TABLE IF NOT EXISTS mydb.History (
   
 
   const getproduct = async (id) => {
-    console.log("ana goa getproducttt MODEELLLL");
-    const [rows] = await pool.query(`SELECT Product.* FROM Product JOIN History ON Product.id = History.pid WHERE History.userid = ?`, [id]);
-    console.log("ana b3d rows--> rows print: ");
-    console.log(rows);
+    const [rows] = await pool.query(`SELECT * FROM History WHERE userId = ?`, [id]);
     return rows.length > 0 ? rows : null;
 }
 

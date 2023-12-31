@@ -1,0 +1,42 @@
+/************* Item Cards *************/
+.cart-item{
+    margin: 10px;
+    align-self: center;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    height: 50px;
+    background: #e7e7ee;
+    align-items: center;
+
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+
+.cart-item:hover{
+    transform: scale(1.05);
+    background: #d2d2d9;
+}
+
+.item-image{
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+}
+
+.name-id{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.name-id p{
+    margin: 0;
+}
+
+.icon{
+    position: relative;
+    right: 0;
+}

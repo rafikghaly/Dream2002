@@ -49,6 +49,15 @@ const getTelvision =async()=>{
     }
 };
 
+const gethistory = async()=>{
+    try {
+        const response = await axios.get('http://localhost:4111/history');
+        return response.data;
+      } catch (error) {
+        console.error('Error fetching cart items:', error);
+        throw error;
+    }
+};
 
 
 const Menu = () => {
@@ -66,14 +75,6 @@ const Menu = () => {
         })
     }
     
-    function gethistory(){
-        axios.get('http://localhost:4111/history') // this is back
-        .then(res => {
-            if (res.data === 'ok2'){
-                window.location.href = '/About'; // this is front
-            }
-        })
-    }
     function LogOut(){
         axios.get('http://localhost:4111/login') // this is back
         .then(res => {
@@ -106,7 +107,7 @@ const Menu = () => {
                 <ul className="subnav">
                     <li className="ui2"><a href={'/user_info'}>User Info</a></li>
                     <hr/>
-                    <li className="ui2"><a href={'/History'}>History</a></li>
+                    <li className="ui2"><Link to='/history' onClick={gethistory}>History</Link></li>
                     <hr/>
                     <li className="ui2"><a onClick={LogOut}>Logout</a></li>
                 </ul>
@@ -114,6 +115,6 @@ const Menu = () => {
         </nav>
     )
 }
-export{getCart,getMobile,getLaptop,getTelvision};
+export{getCart,getMobile,getLaptop,getTelvision,gethistory};
 
 export default Menu

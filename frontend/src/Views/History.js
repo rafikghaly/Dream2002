@@ -1,9 +1,8 @@
 import React, {useState ,  useEffect } from "react";
-import {getCart} from "../Components/NavBar/Menu"
+import {gethistory} from "../Components/NavBar/Menu"
 import NavBar from "../Components/NavBar/Menu";
-import {CartItem} from "../Components/Cart/CartItem";
 import empty_cart from '../Components/Assets/empty_cart.png'
-import axios from 'axios'
+import { HistoryItem } from "../Components/History/History";
 
 
 const History = () => {
@@ -13,7 +12,7 @@ const History = () => {
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const response = await getCart(); // Replace with your actual API endpoint
+          const response = await gethistory(); // Replace with your actual API endpoint
           setItemsList(response);
         } catch (error) {
           console.error('Error fetching history value:', error);
@@ -40,7 +39,7 @@ const History = () => {
                     )
                     :
                     (items_list.map((item) => (
-                        <CartItem data={item}/>
+                        <HistoryItem data={item}/>
                     )))
                 }
             </div>
