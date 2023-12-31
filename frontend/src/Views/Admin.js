@@ -3,10 +3,12 @@ import NavBar from "../Components/NavBar/Menu";
 import add_icon from '../Components/Assets/add_product.png'
 import categories_icon from '../Components/Assets/categories.png'
 import report_icon from '../Components/Assets/report.png'
+import feedback_icon from '../Components/Assets/feedback.png'
 import {AddCategory} from "../Components/AdminComponents/AddCategory";
 import {AddProduct} from "../Components/AdminComponents/AddProduct";
 import {ProductInvItem} from "../Components/AdminComponents/ProductInvItem";
 import '../Components/AdminComponents/admin.css'
+import {Feedback} from "../Components/AdminComponents/Feedback";
 
 const Admin =() =>{
 
@@ -50,6 +52,15 @@ const Admin =() =>{
         }
     ]
 
+    let feedback_list = [{
+        name:'Hesham Salah',
+        email:'egg@gmail.com',
+        feedback:'el report makan4 ad keda, we el sensors mala2et4 7araet gesm el namla ely fe a5er el oda, we en3ekas ar3et Mina 3amany.'
+    }, {
+        name:'Ahmed Nabieh',
+        email:'gay@gmail.com',
+        feedback:'Kosom el fo2y'
+    }]
 
     // These belong to frontend --- Don't touch
     let componentToRender;
@@ -73,8 +84,17 @@ const Admin =() =>{
                 </div>
             )))
         }
-
-    } else {
+    }
+    else if (action === "show_feedback"){
+        if (feedback_list.length===0) {
+            componentToRender = <div>M7d4 by7bak</div>
+        } else {
+            componentToRender = (feedback_list.map((item) => (
+                <Feedback feedback={item}/>
+            )))
+        }
+    }
+    else {
         componentToRender = <div>Invalid value</div>;
     }
 
@@ -88,6 +108,7 @@ const Admin =() =>{
                 <button onClick={()=>{setAction("add_product")}}><img src={add_icon} alt=""/></button>
                 <button onClick={()=>{setAction("add_category")}}><img src={categories_icon} alt=""/></button>
                 <button onClick={()=>{setAction("show_inventory")}}><img src={report_icon} alt=""/></button>
+                <button onClick={()=>{setAction("show_feedback")}}><img src={feedback_icon} alt=""/></button>
             </div>
 
             <div className="admin-comp">
