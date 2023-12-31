@@ -24,6 +24,10 @@ const addToCart = async (userId, productId) => {
   return result.insertId;
 };
 
+const removeFromCart = async (id) => {
+  await pool.query('DELETE FROM Cart WHERE id = ?', [id])
+}
+
 const getCartItems = async (userId) => {
   const [rows] = await pool.query('SELECT * FROM Cart WHERE userId = ?', [userId]);
   return rows;
@@ -31,37 +35,27 @@ const getCartItems = async (userId) => {
 
 const getPRODUCTid= async (userId, productId) => {
 
-  const [rows] = await pool.query('SELECT * FROM Cart WHERE userId = ? AND productId = ?', [userId, productId]); 
-    return rows;
-}
+const [rows] = await pool.query('SELECT * FROM Cart WHERE userId = ? AND productId = ?', [userId, productId]); 
+  return rows;
+} 
 const updateTotalPrice =async (userId,productId,price)=>{
   await pool.query('UPDATE Cart SET totalPrice = totalPrice + ?  WHERE productId = ? AND userId = ?',[price,productId,userId]);
 }
 
 const updateCartItemQuantity = async (userId, productId) => {
-     
-        // Assuming your Cart table has columns id, userId, productId, and quantity
-      await pool.query('UPDATE Cart SET quantity = quantity+1  WHERE userId = ? AND productId = ?' , [userId, productId]);
-        //return updateQuery;
-        // const updateValues = [ userId, productId];
-        // // Execute the update query
-        // await pool.query(updateQuery, updateValues);
-    
-  }
-  const CalPrice = async(userId)=>{
-    const rows= await pool.query('SELECT SUM(totalPrice) FROM cart WHERE userId = ? ',[userId]);
-    return rows.length>0 ? rows : null;
-  }
-   
-
+  await pool.query('UPDATE Cart SET quantity = quantity+1  WHERE userId = ? AND productId = ?' , [userId, productId]);    
+}
+const CalPrice = async(userId)=>{
+  const rows= await pool.query('SELECT SUM(totalPrice) FROM cart WHERE userId = ? ',[userId]);
+  return rows.length>0 ? rows : null;
+}
 
   pool.query(createCartTable);
   console.log('cart table created successfully.');
 
-// Add other functions for updating and removing items from the cart
-
 module.exports = {
   addToCart,
+  removeFromCart,
   getCartItems,
   getPRODUCTid,
   updateCartItemQuantity,

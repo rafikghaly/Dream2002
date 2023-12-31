@@ -47,7 +47,8 @@ app.get('/contactUs',contactUsController.ContactUsView)
 app.post('/showproduct',showproduct.productView);
 app.post('/contactUs',contactUsController.ContactUsUpdate);
 app.get('/cart',cartController.cartView);
-app.post('/cart',cartController.addToCart)
+app.post('/cartadd',cartController.addToCart)
+app.post('/cartremove',cartController.removeFromCart)
 app.get('/Home',promotions.Home);
 app.post('/productInfo',productinfo.showProductByid);
 app.get('/user_info',clientinfo.ClientinfoView);

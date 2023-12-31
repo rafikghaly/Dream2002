@@ -14,7 +14,7 @@ const Product = (props) => {
 
     function addToCartHandle(event){
         event.preventDefault();
-        axios.post('http://localhost:4111/cart',{p_id})
+        axios.post('http://localhost:4111/cartadd',{p_id})
         .then(res => {
             if (res.data === 'Product added to the cart successfully'){
                 alert("Added to Cart")

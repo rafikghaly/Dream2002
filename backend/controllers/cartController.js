@@ -25,8 +25,10 @@ const cartView = async (req, res) => {
     );
 
     const resultList= cartWithDetails.map(item => ({
+      cartId:item.cartItem.id,
       id: item.productDetails.id,
       name: item.productDetails.name,
+      quantity: item.cartItem.quantity,
       price: item.cartItem.totalPrice,
       category:item.productDetails.category
     }));
@@ -45,7 +47,6 @@ const addToCart = async (req, res) => {
     // Assuming that CartModel has a method addToCart that handles the database operations
     const userId= await userModel.getid();
     const existingCartItem = await CartModel.getPRODUCTid(userId[0].id, p_id);
-    console.log(userId[0].id)
     if (existingCartItem.length) {
       // If the product is already in the cart, update the quantity
       await CartModel.updateCartItemQuantity(userId[0].id, p_id, existingCartItem.quantity + 1);
@@ -63,6 +64,18 @@ const addToCart = async (req, res) => {
   }
 };
 
+const removeFromCart = async (req, res) => {
+  try {
+    const {data} = req.body;
+    await CartModel.removeFromCart(data.cartId);
+    res.send('Item removed');
+  }
+  catch (error) {
+    console.error('Error adding to cart:', error);
+    res.status(500).send('Internal Server Error: ' + error.message);
+  }
+};
+
 const CheckOut = async (req, res) => {
   CartModel.CalPrice();
   his = hisModel.addtohistory();
@@ -71,6 +84,7 @@ const CheckOut = async (req, res) => {
 module.exports = {
   cartView,
   addToCart,
+  removeFromCart,
   CheckOut
   // Add other functions
 };

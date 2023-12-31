@@ -22,10 +22,10 @@ const LoginSignup = () => {
             window.location.href = '/home';
         }
         else if (res.data === 'Fill empty fields'){
-            alert("Fill empty fields")
+            alert("Fill empty fields");
         }
         else if (res.data === 'Incorrect Email or Password'){
-            alert("Incorrect Email or Password")
+            alert("Incorrect Email or Password");
         }
     })
     .catch(err =>console.log(err));

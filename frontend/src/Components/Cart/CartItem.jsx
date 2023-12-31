@@ -1,14 +1,23 @@
 import React from 'react'
 import trash_icon from '../Assets/trash-bin.png'
 import './Cart.css'
+import axios from 'axios'
 
 export const CartItem = (props) => {
-    const handleDeleteClick = () => {
-        props.onDelete();
-    };
-
+    
     const data = props.data;
     const product_img = require(`../Assets/${data.category}/${data.id}.jpg`);
+
+    function handleDeleteClick(){
+        axios.post('http://localhost:4111/cartremove',{data})
+        .then(res => {
+            if (res.data === 'Item removed'){
+                alert("Item removed")
+                window.location.reload();
+            }
+        })
+        .catch(err =>console.log(err));
+    }
 
     return (
         <div className='cart-item'>
@@ -20,6 +29,8 @@ export const CartItem = (props) => {
             </div>
 
             <p className="text">{data.category}</p>
+
+            <p className="text">Quantity: {data.quantity}</p>
 
             <p className="text">{data.price} EGP</p>
 
