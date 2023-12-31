@@ -128,3 +128,20 @@
     color: white;
 }
 
+
+.feedback-card{
+    width: 300px;
+    border-radius: 5px;
+    border: 1px solid black;
+    margin: 5px;
+    padding: 10px;
+    background: white;
+
+    text-justify: auto;
+}
+
+.feedback-card h2{
+    border: 1px solid black;
+    border-radius: 5px;
+    font-weight: bolder;
+}
