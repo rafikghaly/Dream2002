@@ -1,4 +1,3 @@
-// controllers/ProductController.js
 const CartModel = require('../models/Cart');
 const hisModel = require('../models/history');
 const userModel = require('../models/User');

@@ -15,8 +15,6 @@ export const AddProduct = () => {
         event.preventDefault();
         axios.post('http://localhost:4111/adminAddProduct',{ name, price, category, description, brand, year, color})
         .then(res => {
-            console.log("ana submit")
-            console.log(res.data);
             if (res.data === 'Product Added'){
                 alert('Product Added!');
             }

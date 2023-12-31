@@ -1,4 +1,3 @@
-const express = require('express');
 const feedbackModel = require('../models/WebsiteFeedback');
 
 const ContactUsView = (req, res) => {
@@ -9,7 +8,6 @@ const ContactUsUpdate= async (req,res)=>{
     const { name ,email ,feedback } = req.body;
     console.log(feedback);
     if (!name || !email || !feedback ) {
-        console.log("Fill empty fields");
         res.send("Fill empty fields")
     }
     else{

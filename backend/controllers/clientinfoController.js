@@ -1,6 +1,3 @@
-const express = require('express');
-const connection = require("../models/connection.js");
-const app = express();
 const userModel = require('../models/User');
 
 const ClientinfoView = async (req, res) => {
@@ -25,12 +22,7 @@ const clientupdate = async (req, res) => {
     catch(error){
         res.send("error");
     }
- 
 };
-
-
-
-
 
 module.exports =  {
    ClientinfoView,
