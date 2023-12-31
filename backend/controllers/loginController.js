@@ -1,5 +1,5 @@
 const userModel = require('../models/User');
-
+const adminModel = require('../models/Admin');
 //to be tested
 const logout = async (req, res) => {
     try{
@@ -44,7 +44,9 @@ const LoginSignup = async (req, res) => {
     }
     else {
         const { email, password } = req.body;
-        if (email=="admin@123"&&password=="1234")
+
+        const resultadmin = await adminModel.getcredentials(email,password);
+        if (resultadmin!=null)
         {
             res.send("Admin");
         }
@@ -53,7 +55,7 @@ const LoginSignup = async (req, res) => {
         } else {
             // Validation
             const results = await userModel.validate(email);
-            if (results.length > 0 && email == results[0].email) {
+            if (results!=null && email == results[0].email) {
                 const results1 = await userModel.checkPass(email);
                 console.log(results1);
                 if (results1.length > 0 && password == results1[0].password) {
@@ -63,6 +65,9 @@ const LoginSignup = async (req, res) => {
                 else {
                     res.send("Incorrect Email or Password");
                 }
+            }
+            else {
+                res.send("Incorrect Email or Password");
             }
         }
     }

@@ -19,5 +19,5 @@ const showProductByid = async (req, res) => {
 };
 
 module.exports = {
-  showProductByid,
+  showProductByid
 };

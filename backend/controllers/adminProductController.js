@@ -22,8 +22,6 @@ const removeProduct = (req,res) => {
   };
 
 module.exports =  {
-  addProductView,
-  removeProductView,
   addProduct,
   removeProduct
 };
