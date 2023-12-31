@@ -39,7 +39,7 @@ const Product = (props) => {
                 <p className="brand">{data.brand}</p>
                 <p className="title">{data.name}</p>
                 <p className="brand">{data.color}</p>
-                <p className="price">{data.price} EGP</p>
+                <p className="price">{data.price} $</p>
             </div>
         </div>
 

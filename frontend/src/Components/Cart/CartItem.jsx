@@ -32,7 +32,7 @@ export const CartItem = (props) => {
 
             <p className="text">Quantity: {data.quantity}</p>
 
-            <p className="text">{data.price} EGP</p>
+            <p className="text">{data.price} $</p>
 
             <img onClick={handleDeleteClick} src={trash_icon} alt="trash icon" className="icon"/>
         </div>
