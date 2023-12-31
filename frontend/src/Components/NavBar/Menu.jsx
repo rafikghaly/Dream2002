@@ -71,7 +71,14 @@ const Menu = () => {
             }
         })
     }
-    
+    function LogOut(){
+        axios.get('http://localhost:4111/login') // this is back
+        .then(res => {
+            if (res.data === 'ok2'){
+                window.location.href = '/'; // this is front
+            }
+        })
+    }
 
     return (
         <nav>
@@ -84,7 +91,7 @@ const Menu = () => {
                 <ul className="subnav">
                     <li className="ui2"><a href={'/user_info'}>User Info</a></li>
                     <hr/>
-                    <li className="ui2"><a href={'/'}>Logout</a></li>
+                    <li className="ui2"><a onClick={LogOut}>Logout</a></li>
                 </ul>
 
             </div>

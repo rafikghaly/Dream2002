@@ -35,7 +35,6 @@ const connection = require('../models/connection.js');
     await pool.query('UPDATE User SET is_online = TRUE WHERE email = ?', [email]);
   }
   const logoutt =async(email)=>{
-    console("LOGGGOUTTT MODEELLLL");
     await pool.query('UPDATE User SET is_online = FALSE WHERE email = ?', [email]);
   }
   const getemail = async()=>{

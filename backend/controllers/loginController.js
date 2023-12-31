@@ -2,10 +2,9 @@ const userModel = require('../models/User');
 
 //to be tested
 const logout = async (req, res) => {
-  console("LOGGGOUTTT");
   if (req.body.action == "logout") {
-    console("IFFF LOGGGOUTTT");
     userModel.logoutt(userModel.getemail());
+    res.send("ok2");
   }
 }
  

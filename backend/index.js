@@ -41,6 +41,7 @@ app.use(express.urlencoded({ extended: true }));
 //ELI BATNYLO AGRBO 
 app.use(cors());
 app.post('/login',loginController.LoginSignup)
+app.get('/login',loginController.logout)
 app.get('/contactUs',contactUsController.ContactUsView)
 //app.use('/showproduct',require('./routes/showproduct'));
 app.post('/showproduct',showproduct.productView);
