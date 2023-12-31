@@ -29,30 +29,30 @@ export const AddProduct = () => {
         setCategory(event.target.value);
     }
 
-    const handleFileChange = (e) => {
-        setFile(e.target.files[0]);
-    };
+    // const handleFileChange = (e) => {
+    //     setFile(e.target.files[0]);
+    // };
 
-    const handleUpload = async () => {
-        if (!file) {
-            alert('Please select a file.');
-            return;
-        }
+    // const handleUpload = async () => {
+    //     if (!file) {
+    //         alert('Please select a file.');
+    //         return;
+    //     }
 
-        const formData = new FormData();
-        formData.append('file', file);
+    //     const formData = new FormData();
+    //     formData.append('file', file);
 
-        try {
-            const response = await axios.post('http://localhost:3001/upload', formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data',
-                },
-            });
-            console.log(response.data);
-        } catch (error) {
-            console.error('Error:', error);
-        }
-    };
+    //     try {
+    //         const response = await axios.post('http://localhost:3001/upload', formData, {
+    //             headers: {
+    //                 'Content-Type': 'multipart/form-data',
+    //             },
+    //         });
+    //         console.log(response.data);
+    //     } catch (error) {
+    //         console.error('Error:', error);
+    //     }
+    // };
 
     return (
         <div>
@@ -116,10 +116,10 @@ export const AddProduct = () => {
                           placeholder={'Description'}
                           onChange = {e=>setDescription(e.target.value)}></textarea>
 
-                <div className="add-product-input">
+                {/* <div className="add-product-input">
                     <label htmlFor=""></label>
                     <input type="file" onChange={handleFileChange} accepts={'image/png, image/jpg'} required/>
-                </div>
+                </div> */}
 
                 <input className={'add-submit-button'} type="submit"/>
             </form>
