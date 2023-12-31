@@ -9,8 +9,47 @@
     height: 100%;
     margin: 0;
 }
+ 
+.mobilebuttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+ 
+.pr{
+    width: 50%;
+    font-size: large;
+ 
+}
+.hed{
+    font-family: Georgia;
+}
+.photo{
+    float: right;
+    width: 48%;
+    height: 70%;
+    margin-top: -350px;
+    margin-right: 0;
+ 
+}
+.col{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+}
+ 
+.empty_cart_img{
+    width: 250px;
+    height: 250px;
+}
+ 
+.empty_cart_msg{
+    text-align: center;
+}
 .userinfo{
-
+ 
     align-items: center;
     margin-top:50px;
     margin-left: 25%;
@@ -19,7 +58,7 @@
     width: 700px;
     height: 400px;
     background: #dcdce8;
-
+ 
 }
 .usericon{
     width: 100px;
@@ -36,49 +75,36 @@
     border-radius: 6px;
     width: 350px;
     height: 65px;
+ 
 }
-.mobilebuttons{
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
+.edit{
+    width: 100px;
+    height: 40px;
+    background: #02052f;
+    border-radius: 6px;
+    color: white;
+    font-size: medium;
+    margin-left: 320px;
+    margin-bottom: 5px;
+    padding-left: 25px;
+    padding-right: 25px;
+ 
 }
-.aboutus{
-    font-size:xxx-large;
-
+.he{
+    margin-left: 210px;
+    margin-bottom: 20px;
+ 
 }
-.pr{
-    width: 50%;
-    font-size: large;
-
-}
-.hed{
-    font-family: Georgia;
-}
-.photo{
-    float: right;
-    width: 48%;
-    height: 70%;
-    margin-top: -350px;
-    margin-right: 0;
-
-}
-.col{
-    margin-top: 15px;
-    display: flex;
-    flex-direction: column;
-    align-self: center;
+.info{
+    display:flex;
+    background: rgb(234, 234, 238);
     align-items: center;
+    margin-left: -10px;
+    border-radius: 6px;
+    width: 380px;
+    height: 65px;
 }
-
-.empty_cart_img{
-    width: 250px;
-    height: 250px;
-}
-
-.empty_cart_msg{
-    text-align: center;
-}
-
+ 
 .about-us-description{
     display: flex;
     flex-direction: column;
@@ -86,7 +112,7 @@
     text-align: justify-all;
     font-size: 20px;
 }
-
+ 
 hr{
     width: 200px;
     height: 5px;
@@ -95,7 +121,7 @@ hr{
     left: 0;
     margin-left: 0;
 }
-
+ 
 .about-us-image{
     background-image: url('../Components/Assets/about us.jpg'), linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,1));
     background-size:cover;
@@ -104,24 +130,20 @@ hr{
     height: 500px;
     border-radius:50px;
 }
-
+ 
 .Homepage-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-left: -10px;
-    border-radius: 6px;
-    width: 380px;
-    height: 65px;
 }
-
+ 
 .main-logo{
     width: 300px;
     height: auto;
     margin: 25px;
 }
-
+ 
 .contact-us-img{
     background: url('../Components/Assets/customer service.jpg');
     background-size: cover;

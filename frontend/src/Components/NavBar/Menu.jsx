@@ -1,9 +1,7 @@
 import React from 'react'
 import './Menu.css'
-import logo from '../Assets/logo.gif'
+import logo from '../Assets/Logo_white.png'
 import user_icon from '../Assets/user_nav.png'
-import { memo, useEffect, useState } from "react";
-import User_info from "../../Views/User_info";
 import cart_icon from '../Assets/nav_cart.png'
 import axios from 'axios'
 import { Link } from 'react-router-dom';
@@ -48,7 +46,6 @@ const getProduct1= async()=>{
     try {
         const dataToSend='mobiles';
         const response = await axios.post('http://localhost:4111/showproduct', {dataToSend});
-        //console.log('res'+response.data);
         return response.data;
       } catch (error) {
         console.error('Error fetching cart items:', error);
@@ -138,13 +135,8 @@ const Menu = () => {
                 <ul>
                     <li><a onClick={gethistory}>About</a></li>
                     <li><a onClick={getContact}>Contact</a></li>
-                    {/* FOFO */}
-                    {/* <li><a onClick={getProduct1}>Mobiles</a></li> */}
                     <li><Link to='/mobile' onClick={getProduct1}>Mobiles</Link></li>
                     <li><Link to='/laptop' onClick={getProduct2}>Laptops</Link></li> 
-                    <li><a href={'/tv'}>TV</a></li> 
-                    {/* <li><a onClick={getCart}></a>cart</li> */}
-                    <li><Link to='/cart' onClick={getCart} >Cart</Link> </li>
                     <li><a href={'/tv'}>TV</a></li>
                 </ul>
             </div>
