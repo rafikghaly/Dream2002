@@ -1,5 +1,3 @@
-const connection = require('../models/connection.js');
-const user = require('../models/User.js');
 const mysql = require('mysql2/promise');
 
 const pool = mysql.createPool({
@@ -9,20 +7,28 @@ const pool = mysql.createPool({
   database: 'mydb',
 });
 
-const createHistoryTable = `CREATE TABLE IF NOT EXISTS History (
-    hid INT AUTO_INCREMENT,
-    userid INT NOT NULL,
-    pid INT NOT NULL,
-    FOREIGN KEY (userid) references User(id),
-    FOREIGN KEY (pid) references product(id),
-    PRIMARY KEY(hid)
+const createHistoryTable = `CREATE TABLE IF NOT EXISTS mydb.History (
+  id INT AUTO_INCREMENT,
+  userId INT NOT NULL,
+  productId INT NOT NULL,
+  quantity INT  DEFAULT 1,
+  totalPrice INT DEFAULT 0 ,
+  PRIMARY KEY(id),
+  FOREIGN KEY (userId) REFERENCES mydb.User(id),
+  FOREIGN KEY (productId) REFERENCES mydb.Product(id)
   )`;
 
   // FOREIGN KEY (pid) references mydb.product(id),
-  const addtohistory = async (id,pid) => {
-    const [result] = await pool.query('INSERT INTO History (userid, pid) VALUES (?, ?)', [id, pid]);
+  const addtohistory = async (id) => {
+    const [result] = await pool.query(`
+      INSERT INTO History (userId, productId, quantity, totalPrice)
+      SELECT userId, productId, quantity, totalPrice FROM Cart
+      WHERE userId = ?
+    `, [id]);
+  
     return result;
   }
+  
 
   const getproduct = async (id) => {
     console.log("ana goa getproducttt MODEELLLL");

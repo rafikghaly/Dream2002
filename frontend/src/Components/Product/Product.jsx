@@ -28,7 +28,7 @@ const Product = (props) => {
         <div  onClick={()=>gotoInfo(data.id)}>
             {/* Image and description text */}
             <div className="product-image">
-                <img src={photo} alt="" />
+                <img src={photo} alt="" style={{height: '200px' }}/>
                 <div className="description">
                     <p> {data.description} </p>
                 </div>

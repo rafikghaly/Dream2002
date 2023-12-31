@@ -76,8 +76,11 @@ const removeFromCart = async (req, res) => {
 };
 
 const CheckOut = async (req, res) => {
-  CartModel.CalPrice();
-  his = hisModel.addtohistory();
+  const userId= await userModel.getid();
+  await hisModel.addtohistory(userId[0].id);
+  await CartModel.removeFromCart(userId[0].id);
+  res.send("Checked out successfully");
+  //const totalPrice = CartModel.CalPrice(userId[0]['id']);
 };
 
 module.exports = {
@@ -85,5 +88,4 @@ module.exports = {
   addToCart,
   removeFromCart,
   CheckOut
-  // Add other functions
 };

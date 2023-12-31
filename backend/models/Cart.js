@@ -25,7 +25,7 @@ const addToCart = async (userId, productId) => {
 };
 
 const removeFromCart = async (id) => {
-  await pool.query('DELETE FROM Cart WHERE id = ?', [id])
+  await pool.query('DELETE FROM Cart WHERE userId = ?', [id]);
 }
 
 const getCartItems = async (userId) => {
