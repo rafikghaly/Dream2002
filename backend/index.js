@@ -11,6 +11,7 @@ const showproduct =require('./controllers/showproductController');
 const promotions =require('./controllers/HomeController');
 const productinfo =require('./controllers/clientProductController');
 const clientinfo =require('./controllers/clientinfoController');
+const adminControl =require('./controllers/adminProductController');
 
 app.set('view engine', 'ejs');
 
@@ -52,6 +53,7 @@ app.get('/Home',promotions.Home);
 app.post('/productInfo',productinfo.showProductByid);
 app.get('/user_info',clientinfo.ClientinfoView);
 app.post('/user_info',clientinfo.clientupdate);
+app.post('/adminAddProduct',adminControl.addProduct);
 
 // Route to show product details by name
 // app.get('/products/:id', clientProductController.showProductByName);

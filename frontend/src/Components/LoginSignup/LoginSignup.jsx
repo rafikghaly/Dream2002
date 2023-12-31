@@ -18,7 +18,10 @@ const LoginSignup = () => {
     event.preventDefault();
     axios.post('http://localhost:4111/login',{email,password,action})
     .then(res => {
-        if (res.data === 'correct password'){
+        if (res.data === 'Admin'){
+            window.location.href = '/admin';
+        }
+        else if (res.data === 'correct password'){
             window.location.href = '/home';
         }
         else if (res.data === 'Fill empty fields'){
@@ -27,6 +30,7 @@ const LoginSignup = () => {
         else if (res.data === 'Incorrect Email or Password'){
             alert("Incorrect Email or Password")
         }
+        
     })
     .catch(err =>console.log(err));
   }
