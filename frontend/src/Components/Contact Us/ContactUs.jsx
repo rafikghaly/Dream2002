@@ -42,8 +42,7 @@ export const ContactUs = () => {
 
                     <textarea rows='50' cols='50' placeholder='Message'
                     onChange = {e=>setMessage(e.target.value)}/>
-
-                    <button className="submit">Send Message</button>
+                    <button className="ContactSubmit">Send Message</button>
                 </div>
             </form>
         </div>

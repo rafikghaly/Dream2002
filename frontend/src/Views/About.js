@@ -1,6 +1,5 @@
 import React from "react";
 import NavBar from "../Components/NavBar/Menu";
-import aboutUs from "../Components/Assets/about us.jpg"
 import './page.css'
 
 const About =() =>{

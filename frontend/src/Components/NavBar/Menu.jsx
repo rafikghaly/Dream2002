@@ -7,7 +7,6 @@ import axios from 'axios'
 import { Link } from 'react-router-dom';
 
 const getCart = async()=>{
-    //console.log('IN THE FUNC');
     try {
         const response = await axios.get('http://localhost:4111/cart');
         return response.data;
@@ -15,34 +14,9 @@ const getCart = async()=>{
         console.error('Error fetching cart items:', error);
         throw error;
     }
-
-    // await axios.get('http://localhost:4111/cart')
-    //     //res gowha el products ll front
-    //     .then(res =>{console.log('gowa:'+ res);
-    //         return res.data;})
-    //     .catch(err =>console.log(err));
-    // const [data, setData] = useState([]);
- 
-     
-    // fetch('http://localhost:4111/cart')
-    // .then(response => {
-    //   if (!response.ok) {
-    //     throw new Error('Network response was not ok.');
-    //   }
-    //   return response.json(); // Parse JSON data
-    // })
-    // .then(data => {
-    //   // Work with the retrieved 'data' from the backend
-    //   console.log(data);
-    //   setData(data);
-     
-    // })
-    // .catch(error => {
-    //   // Handle any errors that occurred during the fetch
-    //   console.error('Fetch error:', error);
-    // });
 };
-const getProduct1= async()=>{
+
+const getMobile= async()=>{
     try {
         const dataToSend='mobiles';
         const response = await axios.post('http://localhost:4111/showproduct', {dataToSend});
@@ -51,32 +25,28 @@ const getProduct1= async()=>{
         console.error('Error fetching cart items:', error);
         throw error;
     }
-    // const dataToSend='mobiles';
-    // //console.log('ana dost mobiles');
-    // //console.log({dataToSend});
-    // axios.post('http://localhost:4111/showproduct', {dataToSend})
-    // //res gowha el products ll front
-    // .then( res =>{// console.log(res.data);
-    //     return res.data;})
-    // .catch(err =>console.log(err));
 };
-const getProduct2 =async()=>{
+
+const getLaptop =async()=>{
     try {
-        const dataToSend='laptop';
+        const dataToSend='laptops';
         const response = await axios.post('http://localhost:4111/showproduct', {dataToSend});
-        //console.log('res'+response.data);
         return response.data;
       } catch (error) {
         console.error('Error fetching cart items:', error);
         throw error;
     }
-    // const dataToSend='laptop';
-    // console.log('ana dost mobiles');
-    // console.log({dataToSend});
-    // axios.post('http://localhost:4111/showproduct', {dataToSend})
-    // //res gowha el products ll front
-    // .then(res =>console.log(res))
-    // .catch(err =>console.log(err));
+};
+
+const getTelvision =async()=>{
+    try {
+        const dataToSend='televisions';
+        const response = await axios.post('http://localhost:4111/showproduct', {dataToSend});
+        return response.data;
+      } catch (error) {
+        console.error('Error fetching cart items:', error);
+        throw error;
+    }
 };
 
 
@@ -92,20 +62,7 @@ const Menu = () => {
             }
         })
     }
-    //FOFO
-
-    // //RES NADOHA FI FRONT FIHA ITEM GOWA EL CART
-    // const getCart = async () => {
-    //     try {
-    //       const cartItems = await getCartItems();
-    //       console.log('Cart items:', cartItems);
-    //       // Handle cart items as needed
-    //     } catch (error) {
-    //       console.error('Error getting cart items:', error);
-    //     }
-    // };
-
-
+    
     function gethistory(){
         axios.get('http://localhost:4111/history') // this is back
         .then(res => {
@@ -125,19 +82,20 @@ const Menu = () => {
             <div className="logo2-container">
                 <img src={user_icon}/>
                 <ul className="subnav">
-                    <li ><button className="btui">Logout</button></li><hr/>
                     <li className="ui2"><a href={'/user_info'}>User Info</a></li>
+                    <hr/>
+                    <li className="ui2"><a href={'/'}>Logout</a></li>
                 </ul>
 
             </div>
 
             <div className="links">
                 <ul>
-                    <li><a onClick={gethistory}>About</a></li>
+                    <li><a href={'/about'}>About</a></li>
                     <li><a onClick={getContact}>Contact</a></li>
-                    <li><Link to='/mobile' onClick={getProduct1}>Mobiles</Link></li>
-                    <li><Link to='/laptop' onClick={getProduct2}>Laptops</Link></li> 
-                    <li><a href={'/tv'}>TV</a></li>
+                    <li><Link to='/mobile' onClick={getMobile}>Mobiles</Link></li>
+                    <li><Link to='/laptop' onClick={getLaptop}>Laptops</Link></li> 
+                    <li><Link to='/tv' onClick={getTelvision}>Televisions</Link></li>
                 </ul>
             </div>
 
@@ -146,6 +104,6 @@ const Menu = () => {
         </nav>
     )
 }
-export{getCart,getProduct1,getProduct2};
+export{getCart,getMobile,getLaptop,getTelvision};
 
 export default Menu

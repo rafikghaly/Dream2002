@@ -1,21 +1,27 @@
 import React from 'react'
 import './Product.css'
-//import mobile from '../Assets/1.jpg'
-import love from '../Assets/heart.png'
-import cart from '../Assets/cart.png'
+import axios from 'axios'
 
 const Product = (props) => {
 
     const data = props.data;
+    const p_id = data.id
     const photo = require(`../Assets/${data.category}/${data.id}.jpg`);
 
     function gotoInfo (id) {
         window.location.href = `/product/${id}`;
     }
 
-    function goToCart () {
-        window.location.href = `/cart`;
-    }
+    function addToCartHandle(event){
+        event.preventDefault();
+        axios.post('http://localhost:4111/cart',{p_id})
+        .then(res => {
+            if (res.data === 'Product added to the cart successfully'){
+                alert("Added to Cart")
+            }
+        })
+        .catch(err =>console.log(err));
+      }
 
     return (
     <div className='product-container'>
@@ -38,7 +44,7 @@ const Product = (props) => {
         </div>
 
         {/*Buttons */}
-        <button className={'product-card-button'} onClick={()=>goToCart()}>Add to cart</button>
+        <button className={'product-card-button'} onClick={addToCartHandle}>Add to cart</button>
     </div>
   )
 }

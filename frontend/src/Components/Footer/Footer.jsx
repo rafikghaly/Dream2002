@@ -11,8 +11,8 @@ export const Footer = () => {
                     <h2>Services</h2>
                     <hr/>
                     <ul>
-                        <li><a href="/Mobiles">Mobiles</a></li>
-                        <li><a href="/Laptops">Laptops</a></li>
+                        <li><a href="/mobiles">Mobiles</a></li>
+                        <li><a href="/laptops">Laptops</a></li>
                         <li><a href="/tv">TVs</a></li>
                     </ul>
                 </div>

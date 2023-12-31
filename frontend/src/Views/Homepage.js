@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import sale from"../Components/Assets/sale.gif"
 import NavBar from "../Components/NavBar/Menu";
 import Product from "../Components/Product/Product";
-import MobileBtn from "../Components/Button/MobileBtn";
 import './page.css'
 
 const Homepage=() =>{
@@ -29,14 +28,6 @@ const Homepage=() =>{
             <div>
              <NavBar/>
                 <div>
-                  <div className="mobilebuttons">
-                      <MobileBtn name="mobile"/>
-                      <MobileBtn name="mobile"/>
-                      <MobileBtn name="mobile"/>
-                      <MobileBtn name="mobile"/>
-                      <MobileBtn name="mobile"/>
-
-                  </div>
                   <div>
                     <img className="sale" src={sale} alt='Sale'/>
                   </div>
