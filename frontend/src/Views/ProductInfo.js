@@ -109,17 +109,16 @@ const ProductInfo =() =>{
                     </form>
 
                     <form onSubmit={submitFeedback}>
-                        <label htmlFor="feedback">Feedback:</label>
                         <textarea
                         id="feedback"
                         name="feedback"
                         rows="4"
                         cols="50"
-                        value={feedback} required
+                        placeholder={"Write your Feedback here"} required
                         onChange={(e) => setFeedback(e.target.value)}
                         />
                         <br />
-                        <button type="submit">Submit Feedback</button>
+                        <button type="submit" className="add">Submit Feedback</button>
                     </form>
                 </div>
             </div>

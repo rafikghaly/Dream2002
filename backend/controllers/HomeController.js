@@ -1,4 +1,3 @@
-const express = require('express');
 const PromotionsModel = require('../models/promotions');
 
 const Home = async (req, res) => {

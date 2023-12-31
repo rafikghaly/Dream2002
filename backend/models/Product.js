@@ -36,7 +36,6 @@ const removeProduct = async(id)=>{
 };
 const getProductPrice =async(id)=>{
   const [rows] = await pool.query('SELECT price FROM Product WHERE id = ?', [id]);
-  console.log(rows[0]);
   return rows[0];
 };
 pool.query(createProductTable);

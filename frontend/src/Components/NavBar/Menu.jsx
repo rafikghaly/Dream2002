@@ -53,6 +53,9 @@ const getTelvision =async()=>{
 
 const Menu = () => {
 
+    function goToHome (){
+        window.location.href = '/home'
+    }
 
     function getContact(){
         axios.get('http://localhost:4111/contactUs') // this is back
@@ -83,17 +86,7 @@ const Menu = () => {
     return (
         <nav>
             <div className="logo-container">
-                <img className='Logo' src={logo} alt='mobilaty logo'/>
-                <a className='Brand' href={'/home'}>Dream2002</a>
-            </div>
-            <div className="logo2-container">
-                <img src={user_icon}/>
-                <ul className="subnav">
-                    <li className="ui2"><a href={'/user_info'}>User Info</a></li>
-                    <hr/>
-                    <li className="ui2"><a onClick={LogOut}>Logout</a></li>
-                </ul>
-
+                <img className='Logo' onClick={goToHome} src={logo} alt='mobilaty logo'/>
             </div>
 
             <div className="links">
@@ -108,6 +101,14 @@ const Menu = () => {
 
             <a href={'/cart'}> <img className={'cart-icon'} src={cart_icon} alt="cart icon"/> </a>
 
+            <div className="logo2-container">
+                <img src={user_icon}/>
+                <ul className="subnav">
+                    <li className="ui2"><a href={'/user_info'}>User Info</a></li>
+                    <hr/>
+                    <li className="ui2"><a onClick={LogOut}>Logout</a></li>
+                </ul>
+            </div>
         </nav>
     )
 }

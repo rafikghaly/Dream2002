@@ -86,6 +86,10 @@ nav ul li a:hover{
  
  
 }
+.logo2-container{
+    margin-left: 20px;
+}
+
 .logo2-container:hover > .subnav{
     display:block;
     animation: slideUp .2s ease;

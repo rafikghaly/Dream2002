@@ -23,8 +23,10 @@ table td{
 
 .add{
     background-color: #02052f;
-    margin: 30px;
+    margin: auto;
+    margin: 10px 10px;
     width: 100%;
+    align-self: center;
     font-size: 23px;
     padding: 10px;
     color: white;
