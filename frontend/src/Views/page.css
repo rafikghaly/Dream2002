@@ -152,3 +152,11 @@ hr{
     height: 700px;
     border-radius: 50px;
 }
+input[type="text"], input[type="email"] {
+    width: 300px; 
+    height: 35px; 
+}
+.edit {
+    margin-left: 50px; /* Adjust as needed */
+}
+
