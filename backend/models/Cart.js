@@ -28,6 +28,10 @@ const removeFromCart = async (id) => {
   await pool.query('DELETE FROM Cart WHERE id = ?', [id]);
 }
 
+const removeFromCartByUser = async (id) => {
+  await pool.query('DELETE FROM Cart WHERE userId = ?', [id]);
+}
+
 const getCartItems = async (userId) => {
   const [rows] = await pool.query('SELECT * FROM Cart WHERE userId = ?', [userId]);
   return rows;
@@ -56,6 +60,7 @@ const CalPrice = async(userId)=>{
 module.exports = {
   addToCart,
   removeFromCart,
+  removeFromCartByUser,
   getCartItems,
   getPRODUCTid,
   updateCartItemQuantity,

@@ -77,7 +77,7 @@ const removeFromCart = async (req, res) => {
 const CheckOut = async (req, res) => {
   const userId= await userModel.getid();
   await hisModel.addtohistory(userId[0].id);
-  await CartModel.removeFromCart(userId[0].id);
+  await CartModel.removeFromCartByUser(userId[0].id);
   res.send("Checked out successfully");
   //const totalPrice = CartModel.CalPrice(userId[0]['id']);
 };
