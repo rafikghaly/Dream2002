@@ -11,8 +11,8 @@ export const Footer = () => {
                     <h2>Services</h2>
                     <hr/>
                     <ul>
-                        <li><a href="/mobiles">Mobiles</a></li>
-                        <li><a href="/laptops">Laptops</a></li>
+                        <li><a href="/mobile">Mobiles</a></li>
+                        <li><a href="/laptop">Laptops</a></li>
                         <li><a href="/tv">TVs</a></li>
                     </ul>
                 </div>
@@ -21,7 +21,7 @@ export const Footer = () => {
                     <hr/>
                     <ul>
                         <li><a href="/About">About Us</a></li>
-                        <li><a href="/Contact Us">Contact Us</a></li>
+                        <li><a href="/Contact">Contact Us</a></li>
                     </ul>
                 </div>
                 <div className={'footer-col'}>
